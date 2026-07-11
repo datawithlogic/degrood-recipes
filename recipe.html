@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipe — deGrood Recipes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="site-logo" href="index.html">deGrood <span>Recipes</span></a>
+    <div class="search-wrap">
+      <svg class="search-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="9" cy="9" r="6"/><line x1="15" y1="15" x2="19" y2="19"/>
+      </svg>
+      <input class="search-input" id="searchInput" type="search" placeholder="Search recipes…" autocomplete="off">
+    </div>
+  </div>
+</header>
+
+<main class="recipe-page" id="recipePage">
+  <div id="loading" style="text-align:center;padding:80px 20px;color:#9c8a7d;font-size:1rem;">Loading…</div>
+</main>
+
+<script src="data/recipes.js"></script>
+<script>
+const EMOJI_MAP = {
+  Asian:'🥢', Bread:'🍞', Breakfast:'🥞', Italian:'🍝', Mexican:'🌮',
+  Seafood:'🦐', Sweets:'🍪', Sides:'🥦', Poultry:'🍗', Soups:'🥣',
+  Sauces:'🫙', Other:'🍲',
+};
+
+function getSlug() {
+  const params = new URLSearchParams(window.location.search);
+  return params.get('slug') || '';
+}
+
+function escHtml(s) {
+  if (!s) return '';
+  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function buildIngredientRows(ingredients) {
+  return ingredients.map(ing => {
+    if (ing.section) {
+      return `<tr class="ingredient-section"><td colspan="3" style="font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);padding-top:12px;padding-bottom:4px;">${escHtml(ing.section)}</td></tr>`;
+    }
+    if (ing.note) {
+      return `<tr><td colspan="3"><div class="ingredient-note">${escHtml(ing.note)}</div></td></tr>`;
+    }
+    return `
+      <tr>
+        <td>${escHtml(ing.grams || '')}</td>
+        <td>${escHtml(ing.practical || '')}</td>
+        <td>${escHtml(ing.item || '')}</td>
+      </tr>`;
+  }).join('');
+}
+
+function buildSteps(steps) {
+  return steps.map((step, i) => {
+    const checkpoint = step.checkpoint
+      ? `<div class="checkpoint">${escHtml(step.checkpoint)}</div>` : '';
+    const why = step.why
+      ? `<div class="why-box">${escHtml(step.why)}</div>` : '';
+    return `
+      <li class="step-item">
+        <div class="step-num">${i + 1}</div>
+        <div class="step-content">
+          ${step.title ? `<div class="step-title">${escHtml(step.title)}</div>` : ''}
+          <div class="step-body">${escHtml(step.body)}</div>
+          ${checkpoint}
+          ${why}
+        </div>
+      </li>`;
+  }).join('');
+}
+
+function buildNotes(notes) {
+  if (!notes || !notes.length) return '';
+  return `
+    <div class="notes-section">
+      <h2>Notes</h2>
+      <ul class="notes-list">
+        ${notes.map(n => `<li>${escHtml(n)}</li>`).join('')}
+      </ul>
+    </div>`;
+}
+
+function render(recipe) {
+  const cat = CATEGORIES[recipe.category] || { color:'#374151', bg:'#f9fafb' };
+  const emoji = EMOJI_MAP[recipe.category] || '🍽';
+  document.title = `${recipe.title} — DeGrood Recipes`;
+
+  document.getElementById('recipePage').innerHTML = `
+    <a class="back-link" href="index.html">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="10" y1="3" x2="4" y2="8"/><line x1="4" y1="8" x2="10" y2="13"/></svg>
+      All Recipes
+    </a>
+
+    <div class="recipe-header">
+      <span class="cat-badge" style="color:${cat.color};background:${cat.bg}">${emoji} ${escHtml(recipe.category)}</span>
+      <h1>${escHtml(recipe.title)}</h1>
+      ${recipe.description ? `<p class="description">${escHtml(recipe.description)}</p>` : ''}
+      <button class="copy-link-btn" id="copyLinkBtn">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6.5 9.5a3.5 3.5 0 0 0 4.95 0l2-2a3.5 3.5 0 0 0-4.95-4.95l-1.25 1.25"/>
+          <path d="M9.5 6.5a3.5 3.5 0 0 0-4.95 0l-2 2a3.5 3.5 0 0 0 4.95 4.95l1.25-1.25"/>
+        </svg>
+        Copy link
+      </button>
+      <div class="recipe-meta-bar">
+        ${recipe.yield ? `<div class="meta-item"><span class="meta-label">Yield</span><span class="meta-value">${escHtml(recipe.yield)}</span></div>` : ''}
+        ${recipe.time  ? `<div class="meta-item"><span class="meta-label">Time</span><span class="meta-value">${escHtml(recipe.time)}</span></div>`  : ''}
+        ${recipe.skill ? `<div class="meta-item"><span class="meta-label">Skill</span><span class="meta-value">${escHtml(recipe.skill)}</span></div>` : ''}
+      </div>
+    </div>
+
+    <div class="recipe-body">
+      <aside class="ingredients-col">
+        <p class="section-label">Ingredients</p>
+        <table class="ingredients-table">
+          <colgroup>
+            <col style="width:26%">
+            <col style="width:24%">
+            <col>
+          </colgroup>
+          <thead>
+            <tr style="border-bottom:2px solid var(--border-dark)">
+              <th style="text-align:left;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-light);padding-bottom:6px;font-weight:600">Grams</th>
+              <th style="text-align:left;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-light);padding-bottom:6px;font-weight:600">Practical</th>
+              <th style="text-align:left;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-light);padding-bottom:6px;font-weight:600">Ingredient</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${buildIngredientRows(recipe.ingredients)}
+          </tbody>
+        </table>
+      </aside>
+
+      <section class="steps-col">
+        <p class="section-label">Method</p>
+        <ol class="steps-list">
+          ${buildSteps(recipe.steps)}
+        </ol>
+        ${buildNotes(recipe.notes)}
+      </section>
+    </div>
+  `;
+}
+
+function renderNotFound(slug) {
+  document.getElementById('recipePage').innerHTML = `
+    <a class="back-link" href="index.html">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="10" y1="3" x2="4" y2="8"/><line x1="4" y1="8" x2="10" y2="13"/></svg>
+      All Recipes
+    </a>
+    <div style="text-align:center;padding:60px 20px">
+      <p style="font-size:1.25rem;margin-bottom:8px">Recipe not found</p>
+      <p style="color:var(--text-muted)">"${escHtml(slug)}" doesn't match any recipe slug.</p>
+    </div>`;
+}
+
+const slug = getSlug();
+const recipe = RECIPES.find(r => r.slug === slug);
+if (recipe) { render(recipe); }
+else { renderNotFound(slug); }
+
+/* Copy link */
+document.addEventListener('click', e => {
+  const btn = e.target.closest('#copyLinkBtn');
+  if (!btn) return;
+  navigator.clipboard.writeText(window.location.href).then(() => {
+    btn.classList.add('copied');
+    btn.innerHTML = `
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="2 8 6 12 14 4"/>
+      </svg>
+      Copied!`;
+    setTimeout(() => {
+      btn.classList.remove('copied');
+      btn.innerHTML = `
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6.5 9.5a3.5 3.5 0 0 0 4.95 0l2-2a3.5 3.5 0 0 0-4.95-4.95l-1.25 1.25"/>
+          <path d="M9.5 6.5a3.5 3.5 0 0 0-4.95 0l-2 2a3.5 3.5 0 0 0 4.95 4.95l1.25-1.25"/>
+        </svg>
+        Copy link`;
+    }, 2500);
+  });
+});
+
+/* Search redirect */
+document.getElementById('searchInput').addEventListener('keydown', e => {
+  if (e.key === 'Enter' && e.target.value.trim()) {
+    window.location.href = `index.html?q=${encodeURIComponent(e.target.value.trim())}`;
+  }
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>deGrood Recipes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="site-logo" href="index.html">deGrood <span>Recipes</span></a>
+    <div class="search-wrap">
+      <svg class="search-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="9" cy="9" r="6"/><line x1="15" y1="15" x2="19" y2="19"/>
+      </svg>
+      <input class="search-input" id="searchInput" type="search" placeholder="Search recipes…" autocomplete="off">
+    </div>
+  </div>
+</header>
+
+<div class="page-wrap">
+  <div class="hero">
+    <h1>The Family Cookbook</h1>
+    <p>Tested recipes, weight measurements, notes from the kitchen.</p>
+  </div>
+
+  <div class="filter-row" id="filterRow"></div>
+  <div class="recipe-grid" id="recipeGrid"></div>
+</div>
+
+<script src="data/recipes.js"></script>
+<script>
+const EMOJI_MAP = {
+  Asian:     '🥢',
+  Bread:     '🍞',
+  Breakfast: '🥞',
+  Italian:   '🍝',
+  Mexican:   '🌮',
+  Seafood:   '🦐',
+  Sweets:    '🍪',
+  Sides:     '🥦',
+  Poultry:   '🍗',
+  Soups:     '🥣',
+  Sauces:    '🫙',
+  Other:     '🍲',
+};
+
+let activeCategory = 'All';
+let searchQuery = '';
+
+/* ─── Filters ── */
+function buildFilters() {
+  const categories = ['All', ...Object.keys(CATEGORIES).sort()];
+  const row = document.getElementById('filterRow');
+  row.innerHTML = categories.map(cat => `
+    <button class="pill ${cat === 'All' ? 'all-pill' : ''} ${cat === activeCategory ? 'active' : ''}" data-cat="${cat}">
+      ${cat === 'All' ? 'All' : (EMOJI_MAP[cat] || '') + ' ' + cat}
+    </button>
+  `).join('');
+  row.querySelectorAll('.pill').forEach(btn => {
+    btn.addEventListener('click', () => {
+      activeCategory = btn.dataset.cat;
+      buildFilters();
+      renderGrid();
+    });
+  });
+}
+
+/* ─── Grid ── */
+function renderGrid() {
+  const q = searchQuery.toLowerCase().trim();
+  const grid = document.getElementById('recipeGrid');
+
+  const filtered = RECIPES.filter(r => {
+    const matchesCat = activeCategory === 'All' || r.category === activeCategory;
+    const matchesSearch = !q
+      || r.title.toLowerCase().includes(q)
+      || r.description.toLowerCase().includes(q)
+      || r.category.toLowerCase().includes(q);
+    return matchesCat && matchesSearch;
+  });
+
+  if (!filtered.length) {
+    grid.innerHTML = `
+      <div class="no-results">
+        <p>No recipes found</p>
+        <small>Try a different search or category</small>
+      </div>`;
+    return;
+  }
+
+  grid.innerHTML = filtered.map(r => {
+    const cat = CATEGORIES[r.category] || { color: '#374151', bg: '#f9fafb' };
+    const emoji = EMOJI_MAP[r.category] || '🍽';
+    return `
+    <a class="recipe-card" href="recipe.html?slug=${encodeURIComponent(r.slug)}">
+      <div class="card-thumb">${emoji}</div>
+      <div class="card-body">
+        <span class="card-cat" style="color:${cat.color};background:${cat.bg}">${r.category}</span>
+        <div class="card-title">${r.title}</div>
+        <div class="card-desc">${r.description}</div>
+        <div class="card-meta">
+          ${r.time ? `<span>⏱ ${r.time}</span>` : ''}
+          ${r.yield ? `<span>👥 ${r.yield}</span>` : ''}
+          ${r.skill ? `<span>📊 ${r.skill}</span>` : ''}
+        </div>
+      </div>
+    </a>`;
+  }).join('');
+}
+
+/* ─── Search ── */
+document.getElementById('searchInput').addEventListener('input', e => {
+  searchQuery = e.target.value;
+  renderGrid();
+});
+
+/* Pre-fill search from URL param (?q=...) — used by recipe page's search redirect */
+const urlQ = new URLSearchParams(window.location.search).get('q') || '';
+if (urlQ) {
+  searchQuery = urlQ;
+  document.getElementById('searchInput').value = urlQ;
+}
+
+buildFilters();
+renderGrid();
+</script>
+</body>
+</html>
