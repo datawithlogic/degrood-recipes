@@ -13,6 +13,14 @@
 <header class="site-header">
   <div class="header-inner">
     <a class="site-logo" href="index.html">deGrood <span>Recipes</span></a>
+    <button class="filter-toggle" id="filterToggle" aria-label="Show filters">
+      <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="3" y1="6" x2="17" y2="6"/>
+        <line x1="6" y1="10" x2="14" y2="10"/>
+        <line x1="9" y1="14" x2="11" y2="14"/>
+      </svg>
+      Filters
+    </button>
     <div class="search-wrap">
       <svg class="search-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
         <circle cx="9" cy="9" r="6"/><line x1="15" y1="15" x2="19" y2="19"/>
@@ -22,83 +30,121 @@
   </div>
 </header>
 
-<div class="page-wrap">
-  <div class="hero">
-    <h1>The Family Cookbook</h1>
-    <p>Tested recipes, weight measurements, notes from the kitchen.</p>
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+<div class="layout-wrap">
+
+  <!-- ─── Sidebar ───────────────────────────────────────────────── -->
+  <nav class="sidebar" id="sidebar" aria-label="Recipe categories">
+    <div class="nav-heading">Browse</div>
+    <ul class="nav-list" id="navList"></ul>
+  </nav>
+
+  <!-- ─── Content ──────────────────────────────────────────────── -->
+  <div class="content-area">
+    <div class="content-header">
+      <h1 class="content-title" id="contentTitle">The Family Cookbook</h1>
+      <p class="content-sub" id="contentSub">Tested recipes, weight measurements, notes from the kitchen.</p>
+    </div>
+    <div class="recipe-grid" id="recipeGrid"></div>
   </div>
 
-  <div class="filter-row" id="filterRow"></div>
-  <div class="filter-row subcat-row" id="subcatRow" style="display:none;margin-top:-12px;padding-left:4px"></div>
-  <div class="recipe-grid" id="recipeGrid"></div>
 </div>
 
 <script src="data/recipes.js"></script>
 <script>
-const EMOJI_MAP = {
-  Asian:     '🥢',
-  Bread:     '🍞',
-  Breakfast: '🥞',
-  Italian:   '🍝',
-  Mexican:   '🌮',
-  Seafood:   '🦐',
-  Sweets:    '🍪',
-  Sides:     '🥦',
-  Poultry:   '🍗',
-  Soups:     '🥣',
-  Sauces:    '🫙',
-  Other:     '🍲',
-};
-
+/* ─── State ── */
 let activeCategory = 'All';
 let activeSubcat   = 'All';
-let searchQuery = '';
+let searchQuery    = '';
 
-/* ─── Filters ── */
-function buildFilters() {
-  const categories = ['All', ...Object.keys(CATEGORIES).sort()];
-  const row = document.getElementById('filterRow');
-  row.innerHTML = categories.map(cat => `
-    <button class="pill ${cat === 'All' ? 'all-pill' : ''} ${cat === activeCategory ? 'active' : ''}" data-cat="${cat}">
-      ${cat === 'All' ? 'All' : (EMOJI_MAP[cat] || '') + ' ' + cat}
-    </button>
-  `).join('');
-  row.querySelectorAll('.pill').forEach(btn => {
+/* ─── Sidebar builder ── */
+function buildNav() {
+  const list = document.getElementById('navList');
+
+  const allActive = activeCategory === 'All';
+  let html = `
+    <li>
+      <button class="nav-item ${allActive ? 'active' : ''}" data-cat="All">
+        <span class="nav-item-inner">
+          <span class="nav-emoji">🍽</span>
+          <span class="nav-label">All Recipes</span>
+        </span>
+        <span class="nav-count">${RECIPES.length}</span>
+      </button>
+    </li>`;
+
+  Object.entries(CATEGORIES).forEach(([cat, def]) => {
+    const catRecipes = RECIPES.filter(r => r.category === cat);
+    const isActive   = activeCategory === cat;
+    const hasSubcats = def.subcats && def.subcats.length > 0;
+    const isOpen     = isActive && hasSubcats;
+
+    html += `
+      <li class="nav-group">
+        <button class="nav-item ${isActive && activeSubcat === 'All' ? 'active' : ''} ${isActive ? 'open' : ''}"
+                data-cat="${cat}">
+          <span class="nav-item-inner">
+            <span class="nav-emoji">${def.emoji}</span>
+            <span class="nav-label">${cat}</span>
+          </span>
+          <span class="nav-count">${catRecipes.length}</span>
+          ${hasSubcats ? `<svg class="nav-arrow ${isOpen ? 'expanded' : ''}" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 6 8 10 12 6"/></svg>` : ''}
+        </button>`;
+
+    if (hasSubcats && isActive) {
+      html += `<ul class="nav-sub-list">`;
+      def.subcats.forEach(sc => {
+        const scCount = RECIPES.filter(r => r.category === cat && r.subcat === sc).length;
+        if (scCount === 0) return;
+        const scActive = isActive && activeSubcat === sc;
+        html += `
+          <li>
+            <button class="nav-sub-item ${scActive ? 'active' : ''}" data-cat="${cat}" data-sub="${sc}">
+              <span class="nav-sub-label">${sc}</span>
+              <span class="nav-count">${scCount}</span>
+            </button>
+          </li>`;
+      });
+      html += `</ul>`;
+    }
+    html += `</li>`;
+  });
+
+  list.innerHTML = html;
+
+  /* wire up clicks */
+  list.querySelectorAll('.nav-item').forEach(btn => {
     btn.addEventListener('click', () => {
-      activeCategory = btn.dataset.cat;
-      activeSubcat = 'All';
-      buildFilters();
+      const cat = btn.dataset.cat;
+      if (cat === activeCategory && activeCategory !== 'All') {
+        /* clicking same category toggles it closed / back to All */
+        activeCategory = 'All';
+        activeSubcat   = 'All';
+      } else {
+        activeCategory = cat;
+        activeSubcat   = 'All';
+      }
+      closeSidebar();
+      buildNav();
       renderGrid();
     });
   });
 
-  // Second-tier subcat row
-  const subcatRow = document.getElementById('subcatRow');
-  const catDef = CATEGORIES[activeCategory];
-  if (catDef && catDef.subcats && catDef.subcats.length) {
-    const subcats = ['All', ...catDef.subcats];
-    subcatRow.style.display = 'flex';
-    subcatRow.innerHTML = subcats.map(sc => `
-      <button class="pill subcat-pill ${sc === activeSubcat ? 'active' : ''}" data-subcat="${sc}" style="font-size:.75rem;padding:4px 11px">
-        ${sc === 'All' ? 'All ' + activeCategory : sc}
-      </button>
-    `).join('');
-    subcatRow.querySelectorAll('.pill').forEach(btn => {
-      btn.addEventListener('click', () => {
-        activeSubcat = btn.dataset.subcat;
-        buildFilters();
-        renderGrid();
-      });
+  list.querySelectorAll('.nav-sub-item').forEach(btn => {
+    btn.addEventListener('click', () => {
+      activeCategory = btn.dataset.cat;
+      activeSubcat   = btn.dataset.sub;
+      closeSidebar();
+      buildNav();
+      renderGrid();
     });
-  } else {
-    subcatRow.style.display = 'none';
-    subcatRow.innerHTML = '';
-  }
+  });
 }
 
 /* ─── Grid ── */
 function renderGrid() {
-  const q = searchQuery.toLowerCase().trim();
+  const q    = searchQuery.toLowerCase().trim();
   const grid = document.getElementById('recipeGrid');
 
   const filtered = RECIPES.filter(r => {
@@ -106,11 +152,25 @@ function renderGrid() {
     const matchesSubcat = activeSubcat   === 'All' || r.subcat   === activeSubcat;
     const matchesSearch = !q
       || r.title.toLowerCase().includes(q)
-      || r.description.toLowerCase().includes(q)
+      || (r.description || '').toLowerCase().includes(q)
       || r.category.toLowerCase().includes(q)
       || (r.subcat || '').toLowerCase().includes(q);
     return matchesCat && matchesSubcat && matchesSearch;
   });
+
+  /* update header label */
+  const titleEl = document.getElementById('contentTitle');
+  const subEl   = document.getElementById('contentSub');
+  if (activeCategory === 'All') {
+    titleEl.textContent = 'The Family Cookbook';
+    subEl.textContent   = 'Tested recipes, weight measurements, notes from the kitchen.';
+  } else {
+    const def = CATEGORIES[activeCategory];
+    titleEl.textContent = activeSubcat !== 'All'
+      ? `${def.emoji} ${activeCategory} › ${activeSubcat}`
+      : `${def.emoji} ${activeCategory}`;
+    subEl.textContent = `${filtered.length} recipe${filtered.length !== 1 ? 's' : ''}`;
+  }
 
   if (!filtered.length) {
     grid.innerHTML = `
@@ -122,17 +182,17 @@ function renderGrid() {
   }
 
   grid.innerHTML = filtered.map(r => {
-    const cat = CATEGORIES[r.category] || { color: '#374151', bg: '#f9fafb' };
-    const emoji = EMOJI_MAP[r.category] || '🍽';
+    const cat   = CATEGORIES[r.category] || { color: '#374151', bg: '#f9fafb', emoji: '🍽' };
+    const label = r.subcat ? `${r.subcat}` : r.category;
     return `
     <a class="recipe-card" href="recipe.html?slug=${encodeURIComponent(r.slug)}">
-      <div class="card-thumb">${emoji}</div>
+      <div class="card-thumb" style="background:${cat.bg}">${cat.emoji}</div>
       <div class="card-body">
-        <span class="card-cat" style="color:${cat.color};background:${cat.bg}">${r.category}</span>
+        <span class="card-cat" style="color:${cat.color};background:${cat.bg}">${label}</span>
         <div class="card-title">${r.title}</div>
-        <div class="card-desc">${r.description}</div>
+        <div class="card-desc">${r.description || ''}</div>
         <div class="card-meta">
-          ${r.time ? `<span>⏱ ${r.time}</span>` : ''}
+          ${r.time  ? `<span>⏱ ${r.time}</span>`  : ''}
           ${r.yield ? `<span>👥 ${r.yield}</span>` : ''}
           ${r.skill ? `<span>📊 ${r.skill}</span>` : ''}
         </div>
@@ -141,20 +201,35 @@ function renderGrid() {
   }).join('');
 }
 
+/* ─── Mobile sidebar toggle ── */
+function openSidebar() {
+  document.getElementById('sidebar').classList.add('open');
+  document.getElementById('sidebarOverlay').classList.add('visible');
+  document.body.style.overflow = 'hidden';
+}
+function closeSidebar() {
+  document.getElementById('sidebar').classList.remove('open');
+  document.getElementById('sidebarOverlay').classList.remove('visible');
+  document.body.style.overflow = '';
+}
+
+document.getElementById('filterToggle').addEventListener('click', openSidebar);
+document.getElementById('sidebarOverlay').addEventListener('click', closeSidebar);
+
 /* ─── Search ── */
 document.getElementById('searchInput').addEventListener('input', e => {
   searchQuery = e.target.value;
   renderGrid();
 });
 
-/* Pre-fill search from URL param (?q=...) — used by recipe page's search redirect */
+/* Pre-fill from ?q= URL param */
 const urlQ = new URLSearchParams(window.location.search).get('q') || '';
 if (urlQ) {
   searchQuery = urlQ;
   document.getElementById('searchInput').value = urlQ;
 }
 
-buildFilters();
+buildNav();
 renderGrid();
 </script>
 </body>

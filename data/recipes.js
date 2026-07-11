@@ -1,23 +1,16 @@
 // degrood-recipes — recipe data
 // To add a recipe: copy an existing entry, change the slug + fields, add to the RECIPES array.
-// Categories: Asian, Bread, Breakfast, Casserole, Italian, Mexican, Other, Poultry, Sauces, Seafood, Sides, Soups, Sweets
-// subcats live inside CATEGORIES (e.g. Bread has Loafs/Pastries/Savory/Sourdough)
-// Add subcat: '...' to any recipe to enable second-tier filtering
+// Top-level categories are course-based. subcats live in CATEGORIES.
+// Add subcat: '...' to any recipe entry to enable second-tier sidebar filtering.
 
 const CATEGORIES = {
-  Asian:     { color: '#b45309', bg: '#fef3c7' },
-  Bread:     { color: '#7c2d12', bg: '#fff7ed', subcats: ['Loafs', 'Pastries', 'Savory', 'Sourdough'] },
-  Breakfast: { color: '#c2410c', bg: '#fff7ed' },
-  Casserole: { color: '#92400e', bg: '#fffbeb' },
-  Italian:   { color: '#b91c1c', bg: '#fef2f2', subcats: ['Pasta', 'Pizza', 'Sauce'] },
-  Mexican:   { color: '#15803d', bg: '#f0fdf4' },
-  Seafood:   { color: '#1d4ed8', bg: '#eff6ff' },
-  Sweets:    { color: '#be185d', bg: '#fdf2f8' },
-  Sides:     { color: '#065f46', bg: '#ecfdf5' },
-  Poultry:   { color: '#b45309', bg: '#fef3c7' },
-  Soups:     { color: '#7e22ce', bg: '#faf5ff' },
-  Sauces:    { color: '#0e7490', bg: '#ecfeff' },
-  Other:     { color: '#374151', bg: '#f9fafb' },
+  Breakfast: { emoji: '🌅', color: '#c2410c', bg: '#fff7ed' },
+  Mains:     { emoji: '🍽', color: '#991b1b', bg: '#fef2f2', subcats: ['Beef', 'Chicken', 'Seafood', 'Pasta'] },
+  Sides:     { emoji: '🥗', color: '#065f46', bg: '#ecfdf5' },
+  Soups:     { emoji: '🥣', color: '#7e22ce', bg: '#faf5ff' },
+  Bread:     { emoji: '🍞', color: '#92400e', bg: '#fffbeb', subcats: ['Sourdough', 'Loafs', 'Pastries', 'Savory'] },
+  Sweets:    { emoji: '🍰', color: '#be185d', bg: '#fdf2f8' },
+  Sauces:    { emoji: '🫙', color: '#0e7490', bg: '#ecfeff' },
 };
 
 const RECIPES = [
@@ -27,7 +20,8 @@ const RECIPES = [
   {
     slug: 'korean-beef-bowl',
     title: 'Korean Gochujang Beef Bowl',
-    category: 'Asian',
+    category: 'Mains',
+    subcat: 'Beef',
     description: 'Ground beef glazed in gochujang, soy, and sesame over short-grain rice. About 20 minutes start to finish.',
     yield: 'Serves 4',
     time: '~20 min',
@@ -68,7 +62,8 @@ const RECIPES = [
   {
     slug: 'chicken-rice-bowl',
     title: 'Soy–Honey–Ginger Chicken Rice Bowl',
-    category: 'Asian',
+    category: 'Mains',
+    subcat: 'Chicken',
     description: 'Chicken thighs marinated and glazed in a savory-sweet soy-honey sauce. Kid-safe, weeknight-fast.',
     yield: 'Serves 4',
     time: '25 min (+15 min marinate)',
@@ -104,7 +99,8 @@ const RECIPES = [
   {
     slug: 'air-fryer-wings',
     title: 'Air Fryer Lemon Pepper Wings',
-    category: 'Poultry',
+    category: 'Mains',
+    subcat: 'Chicken',
     description: 'Crispy skin, tender inside, finished in butter and lemon pepper. Two-stage cook is the whole trick.',
     yield: '~20 pieces, serves 3–4',
     time: '25 min (+optional 1–4 hr air-dry)',
@@ -209,8 +205,8 @@ const RECIPES = [
   {
     slug: 'pizza-dough',
     title: 'Neapolitan Pizza Dough (75% Hydration)',
-    category: 'Italian',
-    subcat: 'Pizza',
+    category: 'Bread',
+    subcat: 'Savory',
     description: '2 pizza doughs at 75% hydration. KitchenAid method with an initial rest — the key to manageable high-hydration dough.',
     yield: '2 × 280 g dough balls (~12" pizzas)',
     time: '20 min active + 1–24 hr ferment',
@@ -242,8 +238,8 @@ const RECIPES = [
   {
     slug: 'pasta-frutti-di-mare',
     title: 'Pasta Frutti di Mare Bianco',
-    category: 'Italian',
-    subcat: 'Pasta',
+    category: 'Mains',
+    subcat: 'Seafood',
     description: 'White wine seafood pasta — clean, briny, no cream. The shellfish cooking liquid becomes the sauce.',
     yield: 'Serves 6',
     time: '35 min (+30–60 min clam purge)',
@@ -327,7 +323,8 @@ const RECIPES = [
   {
     slug: 'meatloaf',
     title: 'Classic Meatloaf',
-    category: 'Other',
+    category: 'Mains',
+    subcat: 'Beef',
     description: 'A tender, well-seasoned 2 lb meatloaf with a tangy-sweet ketchup glaze. Free-formed on a sheet pan for maximum browning.',
     yield: 'Serves 6',
     time: '~80 min',
@@ -739,7 +736,8 @@ const RECIPES = [
   {
     slug: 'chicken-cordon-bleu-casserole',
     title: 'Chicken Cordon Bleu Casserole',
-    category: 'Casserole',
+    category: 'Mains',
+    subcat: 'Chicken',
     description: 'Weeknight shortcut casserole — rotisserie chicken, smoked ham, fluffy rice, Gruyère, and a condensed-soup cream sauce. About 10 minutes of hands-on work.',
     yield: 'Serves 4–6',
     time: '~45 min',
@@ -780,8 +778,7 @@ const RECIPES = [
   {
     slug: 'alfredo-sauce',
     title: 'Alfredo Sauce',
-    category: 'Italian',
-    subcat: 'Sauce',
+    category: 'Sauces',
     description: 'Rich, silky cream-based Alfredo. The entire recipe is about temperature control — cheese goes in off the heat, or it seizes.',
     yield: 'Sauces ~450g (1 lb) dry fettuccine — serves 4–6',
     time: '15 min',
@@ -816,7 +813,7 @@ const RECIPES = [
   {
     slug: 'lasagna',
     title: 'Lasagna',
-    category: 'Italian',
+    category: 'Mains',
     subcat: 'Pasta',
     description: 'Classic layered lasagna with a simmered meat sauce, ricotta-egg cheese layer, and plenty of mozzarella.',
     yield: 'One 9×13" pan, serves 8–10',
@@ -862,7 +859,8 @@ const RECIPES = [
   {
     slug: 'chicken-enchiladas',
     title: 'Chicken Enchiladas',
-    category: 'Mexican',
+    category: 'Mains',
+    subcat: 'Chicken',
     description: 'Chicken simmered in a homemade red sauce, shredded, rolled in flour tortillas, and baked. The sauce doubles as a simmer liquid and topping.',
     yield: '8–10 enchiladas, serves 4–6',
     time: '~1 hr',
@@ -904,7 +902,7 @@ const RECIPES = [
   {
     slug: 'mexican-rice',
     title: 'Mexican-Style Rice',
-    category: 'Mexican',
+    category: 'Sides',
     description: 'Toasted rice simmered in tomato sauce and chicken broth. Great alongside enchiladas, tacos, or any Mexican dish.',
     yield: 'Serves 4–6',
     time: '~35 min',
@@ -939,7 +937,8 @@ const RECIPES = [
   {
     slug: 'pot-roast',
     title: 'Classic Pot Roast',
-    category: 'Other',
+    category: 'Mains',
+    subcat: 'Beef',
     description: 'Chuck roast braised low and slow with red wine, beef broth, and root vegetables. The braising liquid becomes a rich natural jus.',
     yield: 'Serves 6–8',
     time: '~3.5 hr',
@@ -976,7 +975,7 @@ const RECIPES = [
   {
     slug: 'risotto',
     title: 'Classic Risotto',
-    category: 'Other',
+    category: 'Sides',
     description: 'Creamy Arborio rice built ladle-by-ladle. Better Than Bouillon makes a perfectly calibrated stock without fuss.',
     yield: 'Serves 4',
     time: '~35 min',
@@ -1014,7 +1013,8 @@ const RECIPES = [
   {
     slug: 'crabcakes',
     title: 'Crabcakes',
-    category: 'Seafood',
+    category: 'Mains',
+    subcat: 'Seafood',
     description: 'Simple crab cakes built to let the lump crab shine — minimal filler, Old Bay, Dijon. A 30-minute chill before frying is the key to cakes that hold together.',
     yield: '4–6 cakes, serves 2–3',
     time: '25 min + 30 min chill',

@@ -28,11 +28,6 @@
 
 <script src="data/recipes.js"></script>
 <script>
-const EMOJI_MAP = {
-  Asian:'🥢', Bread:'🍞', Breakfast:'🥞', Italian:'🍝', Mexican:'🌮',
-  Seafood:'🦐', Sweets:'🍪', Sides:'🥦', Poultry:'🍗', Soups:'🥣',
-  Sauces:'🫙', Other:'🍲',
-};
 
 function getSlug() {
   const params = new URLSearchParams(window.location.search);
@@ -92,9 +87,9 @@ function buildNotes(notes) {
 }
 
 function render(recipe) {
-  const cat = CATEGORIES[recipe.category] || { color:'#374151', bg:'#f9fafb' };
-  const emoji = EMOJI_MAP[recipe.category] || '🍽';
-  document.title = `${recipe.title} — DeGrood Recipes`;
+  const cat = CATEGORIES[recipe.category] || { color:'#374151', bg:'#f9fafb', emoji:'🍽' };
+  const emoji = cat.emoji || '🍽';
+  document.title = `${recipe.title} — deGrood Recipes`;
 
   document.getElementById('recipePage').innerHTML = `
     <a class="back-link" href="index.html">
