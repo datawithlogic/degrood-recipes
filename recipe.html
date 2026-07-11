@@ -103,7 +103,7 @@ function render(recipe) {
     </a>
 
     <div class="recipe-header">
-      <span class="cat-badge" style="color:${cat.color};background:${cat.bg}">${emoji} ${escHtml(recipe.category)}</span>
+      <span class="cat-badge" style="color:${cat.color};background:${cat.bg}">${emoji} ${escHtml(recipe.category)}${recipe.subcat ? ' › ' + escHtml(recipe.subcat) : ''}</span>
       <h1>${escHtml(recipe.title)}</h1>
       ${recipe.description ? `<p class="description">${escHtml(recipe.description)}</p>` : ''}
       <button class="copy-link-btn" id="copyLinkBtn">

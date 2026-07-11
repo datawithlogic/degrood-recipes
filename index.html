@@ -29,6 +29,7 @@
   </div>
 
   <div class="filter-row" id="filterRow"></div>
+  <div class="filter-row subcat-row" id="subcatRow" style="display:none;margin-top:-12px;padding-left:4px"></div>
   <div class="recipe-grid" id="recipeGrid"></div>
 </div>
 
@@ -50,6 +51,7 @@ const EMOJI_MAP = {
 };
 
 let activeCategory = 'All';
+let activeSubcat   = 'All';
 let searchQuery = '';
 
 /* ─── Filters ── */
@@ -64,10 +66,34 @@ function buildFilters() {
   row.querySelectorAll('.pill').forEach(btn => {
     btn.addEventListener('click', () => {
       activeCategory = btn.dataset.cat;
+      activeSubcat = 'All';
       buildFilters();
       renderGrid();
     });
   });
+
+  // Second-tier subcat row
+  const subcatRow = document.getElementById('subcatRow');
+  const catDef = CATEGORIES[activeCategory];
+  if (catDef && catDef.subcats && catDef.subcats.length) {
+    const subcats = ['All', ...catDef.subcats];
+    subcatRow.style.display = 'flex';
+    subcatRow.innerHTML = subcats.map(sc => `
+      <button class="pill subcat-pill ${sc === activeSubcat ? 'active' : ''}" data-subcat="${sc}" style="font-size:.75rem;padding:4px 11px">
+        ${sc === 'All' ? 'All ' + activeCategory : sc}
+      </button>
+    `).join('');
+    subcatRow.querySelectorAll('.pill').forEach(btn => {
+      btn.addEventListener('click', () => {
+        activeSubcat = btn.dataset.subcat;
+        buildFilters();
+        renderGrid();
+      });
+    });
+  } else {
+    subcatRow.style.display = 'none';
+    subcatRow.innerHTML = '';
+  }
 }
 
 /* ─── Grid ── */
@@ -76,12 +102,14 @@ function renderGrid() {
   const grid = document.getElementById('recipeGrid');
 
   const filtered = RECIPES.filter(r => {
-    const matchesCat = activeCategory === 'All' || r.category === activeCategory;
+    const matchesCat    = activeCategory === 'All' || r.category === activeCategory;
+    const matchesSubcat = activeSubcat   === 'All' || r.subcat   === activeSubcat;
     const matchesSearch = !q
       || r.title.toLowerCase().includes(q)
       || r.description.toLowerCase().includes(q)
-      || r.category.toLowerCase().includes(q);
-    return matchesCat && matchesSearch;
+      || r.category.toLowerCase().includes(q)
+      || (r.subcat || '').toLowerCase().includes(q);
+    return matchesCat && matchesSubcat && matchesSearch;
   });
 
   if (!filtered.length) {
