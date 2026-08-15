@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>deGrood Recipes</title>
+  <title>TacoTown Recipes</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='%23e8794a'%3E%3Cpolygon points='5,9 4,2 11,6'/%3E%3Cpolygon points='19,9 20,2 13,6'/%3E%3Ccircle cx='12' cy='11' r='6.5'/%3E%3Cpath d='M5.5,22 C5.5,16 8,13 12,13 C16,13 18.5,16 18.5,22 Z'/%3E%3C/g%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
@@ -12,7 +13,16 @@
 
 <header class="site-header">
   <div class="header-inner">
-    <a class="site-logo" href="index.html">deGrood <span>Recipes</span></a>
+    <a class="site-logo" href="index.html">
+      <svg class="logo-cat" viewBox="0 0 24 24" aria-hidden="true">
+        <polygon points="5,9 4,2 11,6"/>
+        <polygon points="19,9 20,2 13,6"/>
+        <circle cx="12" cy="11" r="6.5"/>
+        <path d="M5.5,22 C5.5,16 8,13 12,13 C16,13 18.5,16 18.5,22 Z"/>
+        <path d="M18.3,21.5 C22,21.5 23,17.8 21.4,15.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      TacoTown <span>Recipes</span>
+    </a>
     <button class="filter-toggle" id="filterToggle" aria-label="Show filters">
       <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <line x1="3" y1="6" x2="17" y2="6"/>
@@ -42,11 +52,114 @@
 
   <!-- ─── Content ──────────────────────────────────────────────── -->
   <div class="content-area">
+
+    <!-- Two cats peeking over the counter -->
+    <div class="home-hero" id="homeHero">
+      <svg class="hero-cats" viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg"
+           role="img" aria-label="Taco and Lex, two black cats, peeking over a kitchen counter — she looks innocent while he, considerably rounder, reaches for a taco">
+
+        <!-- ── Taco (left) — the namesake, above suspicion ── -->
+        <polygon points="199,110 190,46 244,84" fill="#1a1614"/>
+        <polygon points="291,110 300,46 246,84" fill="#1a1614"/>
+        <polygon points="207,102 201,62 234,86" fill="#4a3b34"/>
+        <polygon points="283,102 289,62 256,86" fill="#4a3b34"/>
+        <circle cx="245" cy="155" r="68" fill="#1a1614"/>
+        <circle cx="218" cy="149" r="17" fill="#f0c063"/>
+        <circle cx="272" cy="149" r="17" fill="#f0c063"/>
+        <ellipse cx="218" cy="149" rx="7" ry="13" fill="#14110f"/>
+        <ellipse cx="272" cy="149" rx="7" ry="13" fill="#14110f"/>
+        <circle cx="213" cy="142" r="4.5" fill="#ffffff" opacity=".92"/>
+        <circle cx="267" cy="142" r="4.5" fill="#ffffff" opacity=".92"/>
+        <polygon points="245,176 236,168 254,168" fill="#d98b8b"/>
+        <path d="M245,176 q0,11 -13,11 M245,176 q0,11 13,11"
+              fill="none" stroke="#4a3b34" stroke-width="3" stroke-linecap="round"/>
+        <g stroke="#5c4d45" stroke-width="2.5" stroke-linecap="round" opacity=".9">
+          <line x1="197" y1="170" x2="139" y2="160"/>
+          <line x1="195" y1="180" x2="134" y2="180"/>
+          <line x1="197" y1="190" x2="141" y2="200"/>
+          <line x1="293" y1="170" x2="351" y2="160"/>
+          <line x1="295" y1="180" x2="356" y2="180"/>
+          <line x1="293" y1="190" x2="349" y2="200"/>
+        </g>
+
+        <!-- ── Lex (right) — younger, rounder, "Potato"; side-eyeing the taco ── -->
+        <polygon points="516,120 508,58 560,96" fill="#1a1614"/>
+        <polygon points="620,120 628,58 576,96" fill="#1a1614"/>
+        <polygon points="523,113 516,72 553,98" fill="#4a3b34"/>
+        <polygon points="613,113 620,72 583,98" fill="#4a3b34"/>
+        <ellipse cx="568" cy="166" rx="78" ry="70" fill="#1a1614"/>
+        <circle cx="540" cy="162" r="17" fill="#f0c063"/>
+        <circle cx="596" cy="162" r="17" fill="#f0c063"/>
+        <ellipse cx="534" cy="162" rx="6.5" ry="13" fill="#14110f"/>
+        <ellipse cx="590" cy="162" rx="6.5" ry="13" fill="#14110f"/>
+        <circle cx="531" cy="155" r="4.2" fill="#ffffff" opacity=".92"/>
+        <circle cx="587" cy="155" r="4.2" fill="#ffffff" opacity=".92"/>
+        <polygon points="568,190 559,182 577,182" fill="#d98b8b"/>
+        <path d="M568,190 q0,11 -13,11 M568,190 q0,11 13,11"
+              fill="none" stroke="#4a3b34" stroke-width="3" stroke-linecap="round"/>
+        <g stroke="#5c4d45" stroke-width="2.5" stroke-linecap="round" opacity=".9">
+          <line x1="514" y1="180" x2="452" y2="170"/>
+          <line x1="512" y1="190" x2="448" y2="190"/>
+          <line x1="622" y1="180" x2="684" y2="170"/>
+          <line x1="624" y1="190" x2="688" y2="190"/>
+        </g>
+
+        <!-- ── Counter ── -->
+        <rect x="0" y="212" width="800" height="88" fill="#ece3d7"/>
+        <rect x="0" y="212" width="800" height="5" fill="#d6c9b8"/>
+
+        <!-- ── The taco — folded tortilla: far side, filling, then near side ── -->
+        <g transform="translate(0,4) rotate(-10 406 185)">
+          <path d="M372,152 C372,176 388,192 406,192 C424,192 440,176 440,152 Z" fill="#cf9a3f"/>
+          <path d="M366,170 Q380,148 394,162 Q406,144 418,159 Q432,146 446,170 Z" fill="#8b4a2b"/>
+          <ellipse cx="376" cy="159" rx="11" ry="6" fill="#6fa04a" transform="rotate(-28 376 159)"/>
+          <ellipse cx="406" cy="150" rx="12" ry="6.5" fill="#7cb054" transform="rotate(5 406 150)"/>
+          <ellipse cx="437" cy="158" rx="11" ry="6" fill="#6fa04a" transform="rotate(28 437 158)"/>
+          <rect x="388" y="157" width="9" height="9" rx="2" fill="#c0392b" transform="rotate(-12 392 161)"/>
+          <rect x="416" y="156" width="9" height="9" rx="2" fill="#c0392b" transform="rotate(15 420 160)"/>
+          <rect x="398" y="165" width="12" height="4" rx="2" fill="#f2c94c" transform="rotate(-8 404 167)"/>
+          <rect x="421" y="166" width="11" height="4" rx="2" fill="#f2c94c" transform="rotate(12 426 168)"/>
+          <path d="M366,168 C366,190 384,208 406,208 C428,208 446,190 446,168 Z"
+                fill="#e8b45c" stroke="#c4862a" stroke-width="3" stroke-linejoin="round"/>
+          <ellipse cx="390" cy="190" rx="7" ry="4.5" fill="#cf9038" opacity=".7" transform="rotate(-20 390 190)"/>
+          <ellipse cx="415" cy="196" rx="6" ry="4"   fill="#cf9038" opacity=".7" transform="rotate(15 415 196)"/>
+          <ellipse cx="431" cy="183" rx="5" ry="3.5" fill="#cf9038" opacity=".7" transform="rotate(40 431 183)"/>
+        </g>
+
+        <!-- ── Paws hooked over the edge ── -->
+        <g fill="#1a1614">
+          <ellipse cx="197" cy="212" rx="27" ry="18"/>
+          <ellipse cx="293" cy="212" rx="27" ry="18"/>
+          <ellipse cx="624" cy="212" rx="27" ry="18"/>
+          <rect x="454" y="202" width="98" height="22" rx="11"/>
+          <ellipse cx="458" cy="213" rx="24" ry="17"/>
+        </g>
+        <g stroke="#3f342e" stroke-width="2.5" stroke-linecap="round">
+          <line x1="188" y1="205" x2="188" y2="214"/>
+          <line x1="199" y1="204" x2="199" y2="214"/>
+          <line x1="210" y1="206" x2="210" y2="214"/>
+          <line x1="284" y1="205" x2="284" y2="214"/>
+          <line x1="295" y1="204" x2="295" y2="214"/>
+          <line x1="306" y1="206" x2="306" y2="214"/>
+          <line x1="615" y1="205" x2="615" y2="214"/>
+          <line x1="626" y1="204" x2="626" y2="214"/>
+          <line x1="637" y1="206" x2="637" y2="214"/>
+          <line x1="449" y1="206" x2="449" y2="215"/>
+          <line x1="459" y1="205" x2="459" y2="215"/>
+          <line x1="469" y1="207" x2="469" y2="215"/>
+        </g>
+      </svg>
+    </div>
+
     <div class="content-header">
       <h1 class="content-title" id="contentTitle">The Family Cookbook</h1>
       <p class="content-sub" id="contentSub">Tested recipes, weight measurements, notes from the kitchen.</p>
     </div>
     <div class="recipe-grid" id="recipeGrid"></div>
+
+    <footer class="site-footer">
+      Supervised by <strong>Taco</strong> &amp; <strong>Lex</strong> (aka Potato), who have never once been fed.
+    </footer>
   </div>
 
 </div>
@@ -113,12 +226,10 @@ function buildNav() {
 
   list.innerHTML = html;
 
-  /* wire up clicks */
   list.querySelectorAll('.nav-item').forEach(btn => {
     btn.addEventListener('click', () => {
       const cat = btn.dataset.cat;
       if (cat === activeCategory && activeCategory !== 'All') {
-        /* clicking same category toggles it closed / back to All */
         activeCategory = 'All';
         activeSubcat   = 'All';
       } else {
@@ -158,7 +269,10 @@ function renderGrid() {
     return matchesCat && matchesSubcat && matchesSearch;
   });
 
-  /* update header label */
+  /* The cats only greet you on the unfiltered home view */
+  const atHome = activeCategory === 'All' && !q;
+  document.getElementById('homeHero').style.display = atHome ? '' : 'none';
+
   const titleEl = document.getElementById('contentTitle');
   const subEl   = document.getElementById('contentSub');
   if (activeCategory === 'All') {
@@ -222,7 +336,6 @@ document.getElementById('searchInput').addEventListener('input', e => {
   renderGrid();
 });
 
-/* Pre-fill from ?q= URL param */
 const urlQ = new URLSearchParams(window.location.search).get('q') || '';
 if (urlQ) {
   searchQuery = urlQ;

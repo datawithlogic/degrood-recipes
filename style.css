@@ -1,5 +1,6 @@
-/* ─── degrood-recipes ────────────────────────────────────────────────────── */
-/* Warm, clean, food-editorial light theme. Mobile-first. */
+/* ─── TacoTown Recipes ───────────────────────────────────────────────────── */
+/* Warm food-editorial light content, framed by an ink-black chrome.          */
+/* The black cat is the furniture; the food stays in the light. Mobile-first. */
 
 :root {
   --bg:          #f9f6f2;
@@ -12,6 +13,15 @@
   --accent:      #c0532a;
   --accent-dark: #a3401e;
   --accent-bg:   #fdf2ee;
+
+  /* Ink chrome — header, sidebar, and the cats themselves */
+  --ink:         #16120f;
+  --ink-2:       #241d19;
+  --ink-3:       #332a24;
+  --ink-text:    #f0e9df;
+  --ink-dim:     #cdc0b2;
+  --ink-muted:   #8e8175;
+  --accent-lite: #e8794a;
   --checkpoint:  #14532d;
   --checkpoint-bg: #f0fdf4;
   --why-bg:      #eff6ff;
@@ -50,12 +60,11 @@ h1, h2, h3, h4 { font-family: var(--font-serif); line-height: 1.25; color: var(-
 
 /* ─── Header / Nav ───────────────────────────────────────────────────────── */
 .site-header {
-  background: var(--surface);
-  border-bottom: 1px solid var(--border);
+  background: var(--ink);
+  border-bottom: 1px solid var(--ink-3);
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: var(--shadow-sm);
 }
 .header-inner {
   max-width: 1100px;
@@ -68,16 +77,28 @@ h1, h2, h3, h4 { font-family: var(--font-serif); line-height: 1.25; color: var(-
   gap: 16px;
 }
 .site-logo {
+  display: flex;
+  align-items: center;
+  gap: 9px;
   font-family: var(--font-serif);
   font-size: 1.25rem;
   font-weight: 700;
-  color: var(--text);
+  color: var(--ink-text);
   letter-spacing: -0.02em;
   white-space: nowrap;
   text-decoration: none;
 }
 .site-logo:hover { text-decoration: none; }
-.site-logo span { color: var(--accent); }
+.site-logo span { color: var(--accent-lite); }
+.logo-cat {
+  width: 25px;
+  height: 25px;
+  flex-shrink: 0;
+  fill: var(--accent-lite);
+  color: var(--accent-lite);
+  transition: transform .2s;
+}
+.site-logo:hover .logo-cat { transform: rotate(-8deg) scale(1.06); }
 
 /* ─── Search ─────────────────────────────────────────────────────────────── */
 .search-wrap {
@@ -92,7 +113,7 @@ h1, h2, h3, h4 { font-family: var(--font-serif); line-height: 1.25; color: var(-
   transform: translateY(-50%);
   width: 16px;
   height: 16px;
-  color: var(--text-light);
+  color: var(--ink-muted);
   pointer-events: none;
 }
 .search-input {
@@ -100,18 +121,19 @@ h1, h2, h3, h4 { font-family: var(--font-serif); line-height: 1.25; color: var(-
   padding: 8px 12px 8px 34px;
   font-family: var(--font-sans);
   font-size: 0.875rem;
-  background: var(--bg);
-  border: 1px solid var(--border);
+  background: rgba(255,255,255,.07);
+  border: 1px solid rgba(255,255,255,.13);
   border-radius: var(--radius);
-  color: var(--text);
+  color: var(--ink-text);
   outline: none;
-  transition: border-color .15s, box-shadow .15s;
+  transition: border-color .15s, box-shadow .15s, background .15s;
 }
 .search-input:focus {
-  border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(192,83,42,.12);
+  background: rgba(255,255,255,.11);
+  border-color: var(--accent-lite);
+  box-shadow: 0 0 0 3px rgba(232,121,74,.18);
 }
-.search-input::placeholder { color: var(--text-light); }
+.search-input::placeholder { color: var(--ink-muted); }
 
 /* ─── Layout shell ───────────────────────────────────────────────────────── */
 .layout-wrap {
@@ -131,15 +153,15 @@ h1, h2, h3, h4 { font-family: var(--font-serif); line-height: 1.25; color: var(-
   top: 60px;
   height: calc(100vh - 60px);
   overflow-y: auto;
-  border-right: 1px solid var(--border);
-  background: var(--surface);
+  border-right: 1px solid var(--ink-3);
+  background: var(--ink);
 }
 .nav-heading {
   font-size: 0.6rem;
   font-weight: 700;
   letter-spacing: .14em;
   text-transform: uppercase;
-  color: var(--text-light);
+  color: var(--ink-muted);
   padding: 0 6px 10px;
 }
 .nav-list {
@@ -163,14 +185,14 @@ h1, h2, h3, h4 { font-family: var(--font-serif); line-height: 1.25; color: var(-
   font-family: var(--font-sans);
   font-size: 0.875rem;
   font-weight: 500;
-  color: var(--text-muted);
+  color: var(--ink-dim);
   text-align: left;
   transition: background .12s, color .12s;
 }
-.nav-item:hover { background: var(--bg); color: var(--text); }
+.nav-item:hover { background: var(--ink-2); color: var(--ink-text); }
 .nav-item.active {
-  background: var(--accent-bg);
-  color: var(--accent);
+  background: var(--accent);
+  color: #fff;
   font-weight: 600;
 }
 .nav-item-inner {
@@ -184,20 +206,21 @@ h1, h2, h3, h4 { font-family: var(--font-serif); line-height: 1.25; color: var(-
 .nav-label { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .nav-count {
   font-size: 0.7rem;
-  color: var(--text-light);
+  color: var(--ink-muted);
   flex-shrink: 0;
   min-width: 18px;
   text-align: right;
 }
-.nav-item.active .nav-count { color: var(--accent); opacity: .7; }
+.nav-item.active .nav-count { color: rgba(255,255,255,.75); }
 
 .nav-arrow {
   width: 14px;
   height: 14px;
   flex-shrink: 0;
-  color: var(--text-light);
+  color: var(--ink-muted);
   transition: transform .2s;
 }
+.nav-item.active .nav-arrow { color: rgba(255,255,255,.8); }
 .nav-arrow.expanded { transform: rotate(180deg); }
 
 .nav-sub-list {
@@ -206,6 +229,7 @@ h1, h2, h3, h4 { font-family: var(--font-serif); line-height: 1.25; color: var(-
   display: flex;
   flex-direction: column;
   gap: 1px;
+  position: relative;
 }
 .nav-sub-item {
   width: 100%;
@@ -220,18 +244,29 @@ h1, h2, h3, h4 { font-family: var(--font-serif); line-height: 1.25; color: var(-
   font-family: var(--font-sans);
   font-size: 0.8125rem;
   font-weight: 400;
-  color: var(--text-muted);
+  color: #b3a798;
   text-align: left;
   transition: background .12s, color .12s;
 }
-.nav-sub-item:hover { background: var(--bg); color: var(--text); }
+.nav-sub-item:hover { background: var(--ink-2); color: var(--ink-text); }
 .nav-sub-item.active {
-  background: var(--accent-bg);
-  color: var(--accent);
+  background: rgba(192,83,42,.22);
+  color: var(--accent-lite);
   font-weight: 600;
 }
 .nav-sub-label { flex: 1; }
-.nav-sub-item.active .nav-count { color: var(--accent); opacity: .7; }
+.nav-sub-item.active .nav-count { color: var(--accent-lite); opacity: .8; }
+
+/* The subcategory list hangs off a hairline, like a tail */
+.nav-sub-list::before {
+  content: '';
+  position: absolute;
+  left: 16px;
+  top: 2px;
+  bottom: 6px;
+  width: 1px;
+  background: var(--ink-3);
+}
 
 /* ─── Sidebar overlay (mobile) ───────────────────────────────────────────── */
 .sidebar-overlay {
@@ -249,6 +284,20 @@ h1, h2, h3, h4 { font-family: var(--font-serif); line-height: 1.25; color: var(-
   min-width: 0;
   padding: 28px 24px 40px;
 }
+/* ─── Home hero — two cats over the counter ──────────────────────────────── */
+.home-hero {
+  margin: 4px 0 26px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
+.hero-cats {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .content-header {
   margin-bottom: 28px;
 }
@@ -271,16 +320,16 @@ h1, h2, h3, h4 { font-family: var(--font-serif); line-height: 1.25; color: var(-
   font-family: var(--font-sans);
   font-size: 0.8125rem;
   font-weight: 500;
-  color: var(--text-muted);
-  background: var(--surface);
-  border: 1.5px solid var(--border);
+  color: var(--ink-text);
+  background: rgba(255,255,255,.07);
+  border: 1.5px solid rgba(255,255,255,.13);
   border-radius: var(--radius);
   cursor: pointer;
   white-space: nowrap;
   transition: border-color .15s, color .15s;
 }
 .filter-toggle svg { width: 16px; height: 16px; }
-.filter-toggle:hover { border-color: var(--accent); color: var(--accent); }
+.filter-toggle:hover { border-color: var(--accent-lite); color: var(--accent-lite); }
 
 /* ─── Recipe grid ────────────────────────────────────────────────────────── */
 .recipe-grid {
@@ -364,6 +413,18 @@ h1, h2, h3, h4 { font-family: var(--font-serif); line-height: 1.25; color: var(-
   align-items: center;
   gap: 4px;
 }
+
+/* ─── Footer ─────────────────────────────────────────────────────────────── */
+.site-footer {
+  margin-top: 44px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border);
+  font-size: 0.8rem;
+  color: var(--text-light);
+  text-align: center;
+  letter-spacing: .01em;
+}
+.site-footer strong { color: var(--text-muted); font-weight: 600; }
 
 /* ─── Empty / no-result state ────────────────────────────────────────────── */
 .no-results {
@@ -685,7 +746,10 @@ h1, h2, h3, h4 { font-family: var(--font-serif); line-height: 1.25; color: var(-
 
 /* ─── Print ──────────────────────────────────────────────────────────────── */
 @media print {
-  .site-header, .back-link, .notes-section { display: none; }
+  .site-header, .back-link, .notes-section,
+  .sidebar, .home-hero, .scale-bar, .copy-link-btn { display: none; }
+  .layout-wrap { display: block; }
+  .content-area { padding: 0; }
   @media (min-width: 700px) {
     .recipe-body { display: grid; }
     .ingredients-col { position: static; }

@@ -1,4 +1,4 @@
-// degrood-recipes — recipe data
+// TacoTown Recipes — recipe data
 // To add a recipe: copy an existing entry, change the slug + fields, add to the RECIPES array.
 // Top-level categories are course-based. subcats live in CATEGORIES.
 // Add subcat: '...' to any recipe entry to enable second-tier sidebar filtering.
