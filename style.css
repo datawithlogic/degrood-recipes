@@ -489,14 +489,19 @@ h1, h2, h3, h4 { font-family: var(--font-serif); line-height: 1.25; color: var(-
 .meta-value { font-size: 0.9rem; font-weight: 600; color: var(--text); }
 
 /* ─── Two-column layout on desktop ──────────────────────────────────────── */
-@media (min-width: 700px) {
+/* 900px, not 700px: below this the method column gets narrower than the
+   ingredient table, which reads worse than simply stacking the two. */
+@media (min-width: 900px) {
   .recipe-body {
     display: grid;
-    grid-template-columns: 280px 1fr;
+    /* minmax(0, …) keeps a wide table from blowing the track out over the
+       method column — grid items default to min-width:auto otherwise. */
+    grid-template-columns: minmax(0, 340px) minmax(0, 1fr);
     gap: 40px;
     align-items: start;
   }
-  .ingredients-col { position: sticky; top: 80px; }
+  .ingredients-col { position: sticky; top: 80px; min-width: 0; }
+  .steps-col { min-width: 0; }
 }
 
 /* ─── Ingredients ────────────────────────────────────────────────────────── */
@@ -510,6 +515,10 @@ h1, h2, h3, h4 { font-family: var(--font-serif); line-height: 1.25; color: var(-
 }
 .ingredients-table {
   width: 100%;
+  /* Keeps the table from stretching to full page width when the layout
+     stacks below 900px — a 200px-wide "Grams" column looks broken. */
+  max-width: 560px;
+  table-layout: fixed;
   border-collapse: collapse;
   font-size: 0.875rem;
   margin-bottom: 16px;
@@ -526,8 +535,14 @@ h1, h2, h3, h4 { font-family: var(--font-serif); line-height: 1.25; color: var(-
 }
 .ingredients-table tr { border-bottom: 1px solid var(--border); }
 .ingredients-table tr:last-child { border-bottom: none; }
-.ingredients-table td { padding: 8px 0; vertical-align: top; }
-.ingredients-table td:first-child { color: var(--text-muted); width: 30%; padding-right: 8px; white-space: nowrap; font-size: 0.8rem; }
+.ingredients-table td { padding: 8px 0; vertical-align: top; overflow-wrap: break-word; }
+.ingredients-table th:not([colspan]),
+.ingredients-table td:not([colspan]) { padding-right: 10px; }
+.ingredients-table th:last-child,
+.ingredients-table td:last-child { padding-right: 0; }
+/* :not([colspan]) matters — section headings and notes span all three columns,
+   and nowrap on those forced the whole table wider than its grid track. */
+.ingredients-table td:first-child:not([colspan]) { color: var(--text-muted); white-space: nowrap; font-size: 0.8rem; }
 .ingredients-table td:last-child { font-weight: 500; }
 .ingredient-section td {
   font-size: 0.7rem;
@@ -750,7 +765,7 @@ h1, h2, h3, h4 { font-family: var(--font-serif); line-height: 1.25; color: var(-
   .sidebar, .home-hero, .scale-bar, .copy-link-btn { display: none; }
   .layout-wrap { display: block; }
   .content-area { padding: 0; }
-  @media (min-width: 700px) {
+  @media (min-width: 900px) {
     .recipe-body { display: grid; }
     .ingredients-col { position: static; }
   }
