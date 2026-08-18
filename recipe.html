@@ -36,7 +36,16 @@
   <div id="loading" style="text-align:center;padding:80px 20px;color:#9c8a7d;font-size:1rem;">Loading…</div>
 </main>
 
-<script src="data/recipes.js"></script>
+<script src="data/categories.js"></script>
+<script src="data/manifest.js"></script>
+<script>
+/* No build step: pull in each recipe file synchronously, in manifest order.
+   document.write during parse guarantees every file has run (and pushed its
+   recipe onto RECIPES) before the page script below executes. */
+for (const f of RECIPE_FILES) {
+  document.write('<script src="data/recipes/' + f + '.js"><\/script>');
+}
+</script>
 <script>
 /* ═══ Scaling engine ═══════════════════════════════════════════════════ */
 

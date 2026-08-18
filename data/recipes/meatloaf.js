@@ -1,0 +1,50 @@
+// TacoTown Recipes — one recipe per file.
+// To add a recipe: copy any file in data/recipes/, name it <slug>.js,
+// edit the fields, then add the slug to data/manifest.js.
+// Never edit a recipe by rewriting a whole other file — one file, one recipe.
+
+RECIPES.push({
+  slug: 'meatloaf',
+  title: 'Classic Meatloaf',
+  category: 'Mains',
+  subcat: 'Beef',
+  description: 'A tender, well-seasoned 2 lb meatloaf with a tangy-sweet ketchup glaze. Free-formed on a sheet pan for maximum browning.',
+  yield: 'Serves 6',
+  time: '~80 min',
+  skill: 'Easy',
+  ingredients: [
+    { section: 'Meatloaf' },
+    { item: 'Meatloaf blend (beef/pork/veal)', grams: '907 g', practical: '2 lb' },
+    { item: 'Onion, finely diced', grams: '150 g', practical: '1 medium' },
+    { item: 'Panko breadcrumbs', grams: '60 g', practical: '~1 cup' },
+    { item: 'Whole milk', grams: '120 g', practical: '½ cup' },
+    { item: 'Ketchup', grams: '30 g', practical: '2 tbsp' },
+    { item: 'Worcestershire sauce', grams: '15 g', practical: '1 tbsp' },
+    { item: 'Dijon mustard (optional)', grams: '10 g', practical: '2 tsp' },
+    { item: 'Salt', grams: '9 g', practical: '1½ tsp' },
+    { item: 'Black pepper', grams: '2 g', practical: '1 tsp' },
+    { item: 'Dried thyme', grams: '1 g', practical: '½ tsp' },
+    { item: 'Garlic, minced', grams: '—', practical: '2 cloves' },
+    { item: 'Eggs', grams: '—', practical: '2 large' },
+    { section: 'Glaze' },
+    { item: 'Ketchup', grams: '120 g', practical: '½ cup' },
+    { item: 'Brown sugar, packed', grams: '50 g', practical: '¼ cup' },
+    { item: 'Worcestershire sauce', grams: '15 g', practical: '1 tbsp' },
+    { item: 'Cider vinegar (optional)', grams: '10 g', practical: '2 tsp' },
+  ],
+  steps: [
+    { title: 'Prep', body: 'Heat oven to 350°F (175°C). Line a sheet pan with parchment.' },
+    { title: 'Soak the panade', body: 'Combine panko and milk in a small bowl; let sit 5 minutes until it forms a paste.', why: 'The soaked breadcrumbs keep the loaf tender by preventing the meat proteins from binding too tightly.' },
+    { title: 'Sauté aromatics', body: 'Cook onion in a splash of olive oil over medium heat until soft, 6–8 minutes. Add garlic for the last minute. Let cool slightly.', why: 'Raw onion works too — finely dice or grate it. It cooks through in the oven, but the texture will be slightly more present.' },
+    { title: 'Mix the glaze', body: 'Stir together all glaze ingredients. Set aside.' },
+    { title: 'Combine', body: 'Beat eggs in a large bowl, then add soaked panade, onion, garlic, ketchup, Worcestershire, Dijon, salt, pepper, and thyme. Add meat and mix with hands just until combined.', checkpoint: 'Stop mixing as soon as it\'s uniform — overmixing makes it dense and rubbery.' },
+    { title: 'Shape and first glaze', body: 'Form into a loaf about 9×5 inches on the parchment. Brush with about one-third of the glaze.' },
+    { title: 'Bake', body: 'Bake 35 minutes, then brush on another third of the glaze. Bake 15–25 minutes more until internal temperature hits 160°F (71°C).', checkpoint: 'Doneness is by temperature, not time. The 2 lb size usually lands at 50–60 min total.' },
+    { title: 'Rest and serve', body: 'Rest 10 minutes before slicing. Serve with remaining glaze.' },
+  ],
+  notes: [
+    'Resting matters — slicing immediately lets the juices run out and the slices crumble.',
+    'Leftovers make excellent sandwiches the next day. Slice cold, reheat in a skillet with a little of the glaze.',
+    'Refrigerate up to 4 days. Freezes well for up to 3 months — slice before freezing.',
+  ],
+});

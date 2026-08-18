@@ -1,0 +1,52 @@
+// TacoTown Recipes — one recipe per file.
+// To add a recipe: copy any file in data/recipes/, name it <slug>.js,
+// edit the fields, then add the slug to data/manifest.js.
+// Never edit a recipe by rewriting a whole other file — one file, one recipe.
+
+RECIPES.push({
+  slug: 'glazed-donuts',
+  title: 'Glazed Donuts (Publix-Style)',
+  category: 'Sweets',
+  description: 'Soft yeast donuts with a thin crackly glaze. Tangzhong technique keeps the crumb tender even day two. Beats the bakery.',
+  yield: '~12 donuts',
+  time: '45 min active + overnight ferment',
+  skill: 'Intermediate',
+  ingredients: [
+    { section: 'Dough' },
+    { item: 'Bread flour (total)', grams: '480 g', practical: '4 cups' },
+    { item: 'Whole milk (total)', grams: '240 g', practical: '1 cup' },
+    { item: 'Instant yeast', grams: '7 g', practical: '2¼ tsp' },
+    { item: 'Granulated sugar', grams: '60 g', practical: '5 tbsp' },
+    { item: 'Fine salt', grams: '8 g', practical: '1½ tsp' },
+    { item: 'Whole eggs', grams: '100 g', practical: '2 large' },
+    { item: 'Egg yolks', grams: '40 g', practical: '2 yolks' },
+    { item: 'Unsalted butter, softened', grams: '60 g', practical: '4 tbsp' },
+    { item: 'Vanilla extract', grams: '8 g', practical: '1¾ tsp' },
+    { item: 'Nutmeg, freshly grated', grams: '—', practical: 'small pinch' },
+    { note: 'Tangzhong (no extra ingredients): cook 25 g of the flour + 125 g of the milk into a paste first. Then use remaining 455 g flour + 115 g milk in the dough. See step 1.' },
+    { section: 'Glaze' },
+    { item: 'Powdered sugar, sifted', grams: '240 g', practical: '2 cups' },
+    { item: 'Whole milk', grams: '45 g', practical: '3 tbsp' },
+    { item: 'Light corn syrup', grams: '20 g', practical: '1 tbsp' },
+    { item: 'Vanilla extract', grams: '3 g', practical: '½ tsp' },
+    { item: 'Fine salt', grams: '—', practical: 'small pinch' },
+    { section: 'For frying' },
+    { item: 'Neutral oil (vegetable, canola)', grams: '—', practical: '2–3 inches deep in pot' },
+  ],
+  steps: [
+    { title: 'Make the tangzhong', body: 'In a small saucepan, whisk 25 g of the flour with 125 g of the milk (taken from the recipe totals — no extra ingredients). Cook over medium heat, stirring constantly, until it thickens to a paste (~150°F / 65°C), about 3–4 minutes. Cool to room temp.', why: 'The pre-cooked starch locks moisture into the crumb — the same job that industrial stabilizers do in store-bought donuts. Skip it and day-two donuts are stale.' },
+    { title: 'Mix the dough', body: 'In the mixer bowl, combine remaining 455 g flour, 115 g milk, yeast, sugar, salt, eggs, yolks, vanilla, nutmeg, and the cooled tangzhong. Mix with dough hook speed 2 until shaggy, then speed 4 for 6–8 minutes until smooth and elastic.' },
+    { title: 'Add butter', body: 'With mixer on speed 2, add softened butter a tablespoon at a time. Once all butter is incorporated, knead on speed 4 for 4–6 more minutes.', checkpoint: 'Windowpane test: stretch a small piece thin enough to be nearly translucent. Dough should be smooth, slightly tacky, pulling away from bowl sides.' },
+    { title: 'Ferment', body: 'Cover and refrigerate 8–16 hours (recommended). OR warm rise at room temp until doubled, 1.5–2 hours. Remove from fridge 1 hour before rolling to temper.' },
+    { title: 'Roll and cut', body: 'On a lightly floured surface, roll dough to ½ inch (1.3 cm) thick. Cut with a donut cutter or 3½" round + 1" hole cutter. Re-roll scraps once. Place on parchment-lined sheet pans with space between.' },
+    { title: 'Final proof', body: 'Proof at room temp 60–90 minutes until noticeably puffy and jiggly.', checkpoint: 'Donuts look swollen and airy; a gentle poke springs back slowly.' },
+    { title: 'Make the glaze', body: 'Whisk powdered sugar, milk, corn syrup, vanilla, and salt until smooth. Glaze should be thin enough to drip off a spoon slowly.', why: 'Corn syrup gives the glaze the same elastic, crackly set as store-bought glaze — no fancy ingredients needed.' },
+    { title: 'Fry', body: 'Heat oil to 350°F (175°C). Fry 3–4 donuts at a time, 90 seconds per side, until deep golden. Transfer to a rack.', checkpoint: 'Even golden color, internal temp ~190°F.' },
+    { title: 'Glaze', body: 'While still warm (2–3 min after frying), dip each donut top-down into the glaze. Let excess drip off, flip, set on rack. Glaze sets to a thin crackly shell as it cools.' },
+  ],
+  notes: [
+    'Weekend morning timing: mix dough Saturday ~3pm, fridge overnight, shape and proof Sunday ~9am, fry ~10:30am.',
+    'Don\'t crowd the oil — 3–4 at a time max. Too many drops the temperature and you get greasy donuts.',
+    'Best eaten the day they\'re made. Room temp, airtight, up to 2 days. Do not refrigerate (the glaze weeps).',
+  ],
+});

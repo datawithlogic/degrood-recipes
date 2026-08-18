@@ -1,0 +1,52 @@
+// TacoTown Recipes — one recipe per file.
+// To add a recipe: copy any file in data/recipes/, name it <slug>.js,
+// edit the fields, then add the slug to data/manifest.js.
+// Never edit a recipe by rewriting a whole other file — one file, one recipe.
+
+RECIPES.push({
+  slug: 'banana-bread',
+  title: 'Banana Bread',
+  category: 'Bread',
+  subcat: 'Loafs',
+  description: 'Start by mashing whatever bananas you have and weighing them — that number sets the batch. Butter plus a little oil and sour cream keep it moist for days.',
+  yield: '1 loaf (9×5")',
+  time: '20 min + 55–65 min bake',
+  skill: 'Easy',
+  ingredients: [
+    { note: 'One loaf below. Weigh your mashed banana first, then set the batch size to match — see step 1.' },
+    { section: 'Wet' },
+    { item: 'Ripe bananas, mashed', grams: '320 g', practical: '~3 medium' },
+    { item: 'Unsalted butter, melted', grams: '106 g', practical: '7½ tbsp' },
+    { item: 'Canola or other neutral oil', grams: '52 g', practical: '¼ cup' },
+    { item: 'Sour cream', grams: '70 g', practical: '4½ tbsp' },
+    { item: 'Eggs', grams: '—', practical: '2 large' },
+    { item: 'Vanilla extract', grams: '5 g', practical: '1 tsp' },
+    { item: 'Granulated sugar', grams: '95 g', practical: 'scant ½ cup' },
+    { item: 'Brown sugar, packed', grams: '95 g', practical: 'scant ½ cup' },
+    { section: 'Dry' },
+    { item: 'All-purpose flour', grams: '235 g', practical: '~1⅞ cups' },
+    { item: 'Baking soda', grams: '4.5 g', practical: '1 tsp' },
+    { item: 'Fine salt', grams: '3 g', practical: '½ tsp' },
+    { item: 'Ground cinnamon', grams: '2.5 g', practical: '1 tsp' },
+    { section: 'Optional crumble topping' },
+    { item: 'Butter, melted', grams: '45 g', practical: '3 tbsp' },
+    { item: 'Brown sugar', grams: '50 g', practical: '¼ cup' },
+    { item: 'All-purpose flour', grams: '30 g', practical: '¼ cup' },
+    { item: 'Cinnamon', grams: '—', practical: '½ tsp' },
+  ],
+  steps: [
+    { title: 'Mash and weigh the bananas', body: 'Mash until mostly smooth with a few small lumps left, then weigh. Figure 320 g per loaf — anywhere from 300–340 g per loaf works with no other changes. Set the batch size above to your loaf count and every amount on the page follows.', checkpoint: 'Mash is loose and pourable, not a dry paste.', why: 'Banana weight is the one number that varies run to run, so it drives the batch instead of the flour.' },
+    { title: 'Mix the wet', body: 'Whisk the melted butter, oil, sour cream, eggs, vanilla, and both sugars into the mashed banana until glossy and uniform, with no egg streaks.', checkpoint: 'Sugar looks dissolved, not grainy on the whisk.' },
+    { title: 'Whisk the dry', body: 'In a separate bowl, whisk the flour, baking soda, salt, and cinnamon together until evenly blended.', why: 'Baking soda clumps, and an unmixed clump leaves a bitter spot in the crumb.' },
+    { title: 'Combine', body: 'Fold the dry into the wet just until no streaks of flour remain. A few small lumps are fine — do not beat it smooth.', checkpoint: 'Batter is thick but pourable, and no dry flour is left at the bottom of the bowl.' },
+    { title: 'Fill the pan', body: 'Pour into a greased or lined 9×5" loaf pan, filling about two-thirds. Scatter the crumble over the top now if you are using it.' },
+    { title: 'Bake', body: 'Bake at 350°F (175°C) for 55–65 minutes. Tent with foil at 30–35 minutes if the top is browning faster than the center is setting.', checkpoint: 'Internal temp 200–205°F at the center. Top springs back lightly when pressed.' },
+    { title: 'Cool', body: 'Rest 10–15 minutes in the pan, then turn out onto a rack and cool fully, 1.5–2 hours, before slicing.', why: 'The crumb is still setting as it cools — slicing warm tears it apart.' },
+  ],
+  notes: [
+    'Banana is forgiving — the fat-to-flour ratio carries the structure, so a loaf can run 300–340 g per loaf of banana without touching anything else.',
+    'Salted butter works; cut the added salt to ¼ tsp per loaf.',
+    'Big batch split across days: mix all the wet in one bowl and refrigerate, whisk all the dry in another and leave it at room temperature. Per loaf, ladle out 843 g per loaf of wet and 245 g per loaf of dry, fold, and bake. Whisk the dry again right before each portioning — it settles.',
+    'Fully cooled and wrapped, it keeps 4 days at room temperature or 3 months frozen as whole loaves.',
+  ],
+});
