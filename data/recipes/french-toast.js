@@ -24,7 +24,7 @@ RECIPES.push({
   ],
   steps: [
     { title: 'Make the custard', body: 'Whisk eggs until yolks and whites are fully combined. Add milk, melted butter, sugar, vanilla, cinnamon, and salt. Whisk until smooth.', checkpoint: 'No visible butter droplets; sugar dissolved; mixture is glossy.', why: 'Hot butter can scramble the eggs — let it cool to warm first.' },
-    { title: 'Soak the bread', body: 'Add bread to the custard. Soak 3–5 minutes per side, pressing gently.', checkpoint: 'Slices feel noticeably heavier; center no longer looks dry when pressed, but bread still holds its shape.' },
+    { title: 'Soak the bread', body: 'Add bread to the custard. Soak about 1 minute per side, pressing gently. Very stale, dry bread can go up to 2 minutes per side.', checkpoint: 'Slices feel noticeably heavier; center no longer looks dry when pressed, but bread still holds its shape.' },
     { title: 'Preheat the pan', body: 'Heat cast iron skillet over medium 2–3 minutes. Add a small pat of butter and let it foam and subside.', checkpoint: 'A drop of custard dripped in should sizzle immediately.' },
     { title: 'Cook', body: 'Lift slices, let excess custard drip off. Cook 3–4 minutes per side until deep golden brown. Reduce heat if browning too fast — the inside needs time to set.', checkpoint: 'Edges look set and matte before flipping; underside is caramel-brown.' },
   ],
