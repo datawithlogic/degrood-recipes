@@ -607,7 +607,7 @@ h1, h2, h3, h4 { font-family: var(--font-serif); line-height: 1.25; color: var(-
   margin-bottom: 6px;
   color: var(--text);
 }
-.step-body { font-size: 0.9rem; color: var(--text); line-height: 1.65; }
+.step-body { font-size: 0.9rem; color: var(--text); line-height: 1.65; white-space: pre-line; }
 
 .checkpoint {
   display: flex;
