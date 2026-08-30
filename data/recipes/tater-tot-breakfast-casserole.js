@@ -1,0 +1,49 @@
+// TacoTown Recipes — one recipe per file.
+// To add a recipe: copy any file in data/recipes/, name it <slug>.js,
+// edit the fields, then add the slug to data/manifest.js.
+// Never edit a recipe by rewriting a whole other file — one file, one recipe.
+
+RECIPES.push({
+  slug: 'tater-tot-breakfast-casserole',
+  title: 'Tater Tot Breakfast Casserole',
+  category: 'Breakfast',
+  description: 'Frozen tots, a savory protein, and a cheddar-egg custard baked in a 9×13". Assembles in about 15 minutes and feeds a crowd; the tots go in straight from the freezer.',
+  yield: 'Serves 8',
+  time: '~1 hr 15 min',
+  skill: 'Easy',
+  ingredients: [
+    { section: 'Base' },
+    { item: 'Frozen tater tots, not thawed', grams: '907 g', practical: '2 lb' },
+    { item: 'Yellow onion, diced', grams: '~110 g', practical: '1 small' },
+    { section: 'Protein — pick one' },
+    { item: 'Bulk breakfast sausage', grams: '454 g', practical: '1 lb' },
+    { item: 'Bacon, chopped', grams: '340 g', practical: '10 slices' },
+    { item: 'Rotisserie chicken, shredded', grams: '340 g', practical: '2 cups' },
+    { note: 'Use one protein, not all three — everything after step 1 is identical either way. Sausage is the version we make most; chicken is the leanest.' },
+    { section: 'Custard' },
+    { item: 'Large eggs', grams: '~500 g', practical: '10 large' },
+    { item: 'Whole milk', grams: '360 g', practical: '1½ cups' },
+    { item: 'Onion powder', grams: '—', practical: '½ tsp' },
+    { item: 'Garlic powder', grams: '—', practical: '¼ tsp' },
+    { item: 'Fine salt', grams: '—', practical: '½ tsp' },
+    { item: 'Black pepper', grams: '—', practical: '¼ tsp' },
+    { section: 'Topping' },
+    { item: 'Sharp cheddar, shredded, divided', grams: '340 g', practical: '3 cups' },
+  ],
+  steps: [
+    { title: 'Cook the protein with the onion', body: 'Sausage: brown in a skillet over medium with the diced onion, breaking it up, until no pink remains; drain the fat. Bacon: cook until crisp, remove and crumble, then soften the onion in 1 tbsp of the reserved fat. Chicken: soften the onion in 1 tbsp butter, then toss with the shredded chicken.', checkpoint: 'Onion is translucent and just starting to color; the pan is not swimming in fat.' },
+    { title: 'Heat the oven', body: 'Preheat to 375°F (190°C) and grease a 9×13" baking dish.' },
+    { title: 'Layer the tots', body: 'Spread the frozen tots in a single even layer across the bottom of the dish. Do not thaw them.', why: 'Frozen tots hold their shape through the covered bake; thawed ones collapse into a paste under the custard.' },
+    { title: 'Add protein and half the cheese', body: 'Scatter the protein-onion mixture over the tots, then sprinkle with half the cheddar.' },
+    { title: 'Whisk the custard', body: 'Whisk the eggs until yolks and whites are fully combined, then whisk in the milk, onion powder, garlic powder, salt, and pepper.', checkpoint: 'Uniform pale yellow with no ropy strands of white.' },
+    { title: 'Pour and top', body: 'Pour the custard evenly over the dish, nudging it into the corners. Sprinkle the remaining cheddar over the top.' },
+    { title: 'Bake covered', body: 'Cover tightly with foil and bake 30 minutes.', why: 'The foil traps steam so the custard sets before the top browns.' },
+    { title: 'Bake uncovered', body: 'Remove the foil and bake another 20–25 minutes.', checkpoint: 'Top is golden and the center no longer jiggles as a liquid — a knife slipped into the middle comes out clean, or center reads 165°F.' },
+    { title: 'Rest', body: 'Let stand 10 minutes before cutting.', checkpoint: 'Squares lift out cleanly instead of slumping.' },
+  ],
+  notes: [
+    'Make-ahead: assemble through the topping, cover, and refrigerate overnight. Add 10–15 minutes to the covered bake when going in cold.',
+    'Adapted from Allrecipes’ Hash Brown and Egg Casserole (recipe 87013), swapping tater tots for hash browns.',
+    'Reheat portions covered at 350°F until hot through, about 15 minutes.',
+  ],
+});

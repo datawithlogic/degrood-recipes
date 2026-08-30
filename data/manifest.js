@@ -39,4 +39,5 @@ const RECIPE_FILES = [
   'baked-mac-cheese',
   'honey-garlic-carrots',
   'potato-soup',
+  'tater-tot-breakfast-casserole',
 ];
