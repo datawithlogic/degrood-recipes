@@ -1,0 +1,53 @@
+// TacoTown Recipes — one recipe per file.
+// To add a recipe: copy any file in data/recipes/, name it <slug>.js,
+// edit the fields, then add the slug to data/manifest.js.
+// Never edit a recipe by rewriting a whole other file — one file, one recipe.
+
+RECIPES.push({
+  slug: 'pulled-pork',
+  title: 'Oven Pulled Pork',
+  category: 'Mains',
+  subcat: 'Pork',
+  description: 'A bone-in pork butt rubbed the night before and roasted low and slow until it shreds under a fork. The pan drippings get reduced into a tangy vinegar-and-mustard barbecue sauce. No smoker required.',
+  yield: 'Serves 10–12',
+  time: '~7 hr, mostly unattended',
+  skill: 'Easy',
+  ingredients: [
+    { section: 'Pork and rub' },
+    { item: 'Bone-in pork butt (Boston butt)', grams: '2.3–2.7 kg', practical: '5–6 lb' },
+    { item: 'Diamond Crystal kosher salt', grams: '11 g', practical: '4 tsp' },
+    { note: 'All salt here is Diamond Crystal. With Morton kosher salt use half the weight; with table salt use a little under half.' },
+    { item: 'Sweet paprika', grams: '7 g', practical: '1 tbsp' },
+    { item: 'Ground cumin', grams: '6 g', practical: '1 tbsp' },
+    { item: 'Garlic powder', grams: '9 g', practical: '1 tbsp' },
+    { item: 'Dry mustard powder', grams: '7 g', practical: '1 tbsp' },
+    { item: 'Dark brown sugar, packed', grams: '13 g', practical: '1 tbsp' },
+    { item: 'Black pepper, freshly ground', grams: '2 g', practical: '1 tsp' },
+    { section: 'Tangy barbecue sauce' },
+    { item: 'Ketchup', grams: '300 g', practical: '1⅛ cups' },
+    { item: 'Cider vinegar', grams: '180 g', practical: '¾ cup' },
+    { item: 'Dark brown sugar, packed', grams: '160 g', practical: '¾ cup' },
+    { item: 'Spicy brown mustard', grams: '90 g', practical: '6 tbsp' },
+    { item: 'Garlic cloves, minced', grams: '10 g', practical: '2 cloves' },
+    { item: 'Cayenne pepper', grams: '1 g', practical: '½ tsp' },
+    { item: 'Water, for deglazing the roasting pan', grams: '180 g', practical: '¾ cup' },
+    { section: 'To serve' },
+    { item: 'Soft hamburger buns, toasted', grams: '—', practical: '12' },
+  ],
+  steps: [
+    { title: 'Rub the night before', body: 'Combine the salt, paprika, cumin, garlic powder, mustard powder, brown sugar, and black pepper. Pat the pork butt dry and rub the mixture over every surface, working it into the crevices. Set the pork fat-cap-up on a rack in a roasting pan, cover loosely, and refrigerate overnight.', checkpoint: 'By morning the surface looks wet and lacquered rather than powdery — the salt has drawn moisture out and been reabsorbed.', why: 'An overnight rub is a dry brine. On a roast this thick, salt needs hours to travel past the bark and season the interior; applied at the last minute it only seasons the crust.' },
+    { title: 'Into a low oven', body: 'Heat the oven to 300°F. Uncover the pork and put it in, still fat-cap-up on its rack in the roasting pan. Leave it alone — no basting, no covering, no peeking for the first several hours.', why: 'Fat-cap-up lets rendering fat run down over the meat, and the exposed surface is what builds the dark bark that stands in for smoke.' },
+    { title: 'Roast low and slow', body: 'Roast 6 to 6½ hours total. Begin checking with an instant-read thermometer at the 5½ hour mark, probing the thickest part away from the bone.', checkpoint: 'Done at 195°F internal. The thermometer should slide in with almost no resistance, and the blade bone should wiggle free when twisted.' },
+    { title: 'Rest', body: 'Move the pork to a cutting board or large platter, tent with foil, and rest at least 30 minutes. Leave the roasting pan and its drippings alone for now.', checkpoint: 'Still too hot to handle bare-handed after 30 minutes, but the juices have stopped visibly running.' },
+    { title: 'Build the sauce', body: 'While the pork rests, combine the ketchup, cider vinegar, brown sugar, spicy brown mustard, minced garlic, and cayenne in a saucepan. Bring to a simmer over medium heat and cook about 10 minutes, stirring now and then.', checkpoint: 'Thick enough to coat a spoon, and the raw-vinegar bite has softened into tang.' },
+    { title: 'Reduce the drippings into it', body: 'Skim and discard most of the fat from the roasting pan. Set the pan over a burner on medium, add the water, and scrape up every browned bit. Simmer to reduce by about half, then stir the whole thing into the barbecue sauce.', checkpoint: 'The finished sauce is a shade darker and tastes distinctly of roast pork, not just ketchup.', why: 'The fond in that pan is where six hours of rendering went. Folding it into the sauce is what separates homemade barbecue sauce from bottled.' },
+    { title: 'Pull and dress', body: 'Pull the bone out — it should slip free clean. Shred the meat with two forks or your hands, discarding large fat pockets but keeping the dark crusty bark and mixing it evenly through. Moisten the pork with sauce a ladle at a time.', checkpoint: 'Every strand glistens but nothing pools in the bottom of the bowl. Sauce should season the pork, not swim it.' },
+    { title: 'Serve', body: 'Pile onto toasted buns with extra sauce on the side. Slaw on top is traditional and does real work — the crunch and acidity cut the richness.' },
+  ],
+  notes: [
+    'Boneless butt works, but the bone is a useful doneness cue and adds body to the drippings. If using boneless, start checking temperature an hour earlier.',
+    'Make-ahead: roast a day in advance, shred, and refrigerate the pork and sauce separately. Reheat the pork gently with a splash of water, covered, at 300°F, then sauce it.',
+    'Refrigerates 4 days; freezes up to 3 months. Freeze it lightly sauced — it reheats moister that way.',
+    'The sauce doubles easily and keeps 2 weeks in the fridge. It is also excellent on chicken.',
+  ],
+});

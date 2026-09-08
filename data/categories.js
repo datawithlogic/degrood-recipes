@@ -4,10 +4,11 @@
 
 const CATEGORIES = {
   Breakfast: { emoji: '🌅', color: '#c2410c', bg: '#fff7ed' },
-  Mains:     { emoji: '🍽', color: '#991b1b', bg: '#fef2f2', subcats: ['Beef', 'Chicken', 'Seafood', 'Pasta'] },
+  Mains:     { emoji: '🍽', color: '#991b1b', bg: '#fef2f2', subcats: ['Beef', 'Chicken', 'Pork', 'Seafood', 'Pasta'] },
   Sides:     { emoji: '🥗', color: '#065f46', bg: '#ecfdf5' },
   Soups:     { emoji: '🥣', color: '#7e22ce', bg: '#faf5ff' },
   Bread:     { emoji: '🍞', color: '#92400e', bg: '#fffbeb', subcats: ['Sourdough', 'Loafs', 'Pastries', 'Savory'] },
   Sweets:    { emoji: '🍰', color: '#be185d', bg: '#fdf2f8' },
   Sauces:    { emoji: '🫙', color: '#0e7490', bg: '#ecfeff' },
+  Coffee:    { emoji: '☕', color: '#6b4423', bg: '#f8f1ea', subcats: ['Espresso', 'Iced', 'Specialty', 'Brewed'] },
 };

@@ -1,0 +1,50 @@
+// TacoTown Recipes — one recipe per file.
+// To add a recipe: copy any file in data/recipes/, name it <slug>.js,
+// edit the fields, then add the slug to data/manifest.js.
+// Never edit a recipe by rewriting a whole other file — one file, one recipe.
+
+RECIPES.push({
+  slug: 'smash-burgers',
+  title: 'Smash Burgers',
+  category: 'Mains',
+  subcat: 'Beef',
+  description: 'Two thin, lacy-edged patties per bun with a slice of American melted between them. Twenty minutes start to finish, and the only real technique is smashing hard and smashing once.',
+  yield: 'Serves 4',
+  time: '~20 min',
+  skill: 'Easy',
+  ingredients: [
+    { section: 'Special sauce' },
+    { item: 'Mayonnaise', grams: '55 g', practical: '¼ cup' },
+    { item: 'Shallot, minced', grams: '20 g', practical: '2 tbsp' },
+    { item: 'Dill pickles, minced', grams: '15 g', practical: '1 tbsp' },
+    { item: 'Dill pickle brine', grams: '5 g', practical: '1 tsp' },
+    { item: 'Ketchup', grams: '17 g', practical: '1 tbsp' },
+    { item: 'Granulated sugar', grams: '1 g', practical: '¼ tsp' },
+    { item: 'Black pepper', grams: '—', practical: '¼ tsp' },
+    { section: 'Burgers' },
+    { item: 'Ground beef, 80% lean', grams: '454 g', practical: '1 lb' },
+    { item: 'Vegetable oil, for the pan', grams: '3 g', practical: '½ tsp' },
+    { item: 'Kosher salt', grams: '3 g', practical: '½ tsp' },
+    { item: 'American cheese, deli slices', grams: '76 g', practical: '4 slices' },
+    { item: 'Potato or soft hamburger buns', grams: '200 g', practical: '4 buns' },
+    { item: 'Bibb lettuce leaves', grams: '30 g', practical: '4 leaves' },
+    { item: 'Tomato, sliced thin', grams: '120 g', practical: '1 tomato' },
+    { note: 'Do not buy lean beef. 80/20 is the floor — the fat renders out and fries the crust, and at 90/10 you get a dry, gray patty with no lace.' },
+  ],
+  steps: [
+    { title: 'Make the sauce', body: 'Stir the mayonnaise, shallot, pickles, brine, ketchup, sugar, and pepper together. Refrigerate while you cook.', checkpoint: 'Pale orange and loose enough to spread with the back of a spoon.' },
+    { title: 'Portion the beef', body: 'Divide the beef into 8 loose balls, about 57 g each. Roll them just enough to hold together and no more — leave them shaggy.', checkpoint: 'A ball should hold its shape but visibly fall apart if you press it.', why: 'Compacting the meat now means a dense, springy patty later. All the structure you need comes from the smash.' },
+    { title: 'Heat the pan hard', body: 'Set a 12-inch cast-iron or carbon-steel skillet over medium-low for 5 minutes, then crank to high until it just starts to smoke. Wipe the surface with the oil on a paper towel. Do not use nonstick or stainless.', checkpoint: 'A drop of water skitters and vanishes instantly. If it sits and boils, keep waiting.', why: 'The five minutes on low heats the pan evenly all the way through; going straight to high gives you a scorching center and cool edges.' },
+    { title: 'Smash', body: 'Add 3–4 balls with space between them. Immediately press each one flat with a stiff spatula or a foil-wrapped saucepan bottom, to about 4½ inches across. Hold the pressure 10 seconds, then release. Never press again.', checkpoint: 'Ragged, thin edges you can almost see through — those become the crispy lace.' },
+    { title: 'Sear the first side', body: 'Season the tops with salt. Cook without moving until the patty has lost its pink from the edges up through about three-quarters of its thickness, 1½–2 minutes. Juices will pool on top.', checkpoint: 'Slide the spatula under and peek — you want a solid dark-brown crust, not tan.' },
+    { title: 'Flip and cheese', body: 'Scrape hard under each patty so the crust comes with it, and flip. Lay a slice of cheese on half the patties. Cook 15–30 seconds more, then stack a bare patty on top of each cheesed one so the cheese melts between them.', checkpoint: 'Cheese slumping over the edges. Total time on the second side is seconds, not minutes.' },
+    { title: 'Repeat and toast', body: 'Transfer the stacks to a plate. Wipe the pan, reheat, and cook the second batch. While it cooks, toast the cut sides of the buns in a second skillet or under the broiler until golden.' },
+    { title: 'Build', body: 'Spread sauce on both cut sides of each bun. Bottom bun, tomato, lettuce, then the doubled patty, then the top. Serve right away — the crust softens as it sits.' },
+  ],
+  notes: [
+    'A cast-iron griddle across two burners cooks all 8 patties in one pass and is worth pulling out if you own one.',
+    'Skip fancy cheese. American melts into the meat instead of breaking into oil and curds — this is the one place it genuinely wins.',
+    'Sauce keeps a week in the fridge and gets better on day two. Make it ahead.',
+    'Cooked patties do not reheat well. If you are feeding people in shifts, hold the balls in the fridge and cook to order.',
+  ],
+});

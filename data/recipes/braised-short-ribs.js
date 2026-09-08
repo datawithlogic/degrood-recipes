@@ -1,0 +1,52 @@
+// TacoTown Recipes — one recipe per file.
+// To add a recipe: copy any file in data/recipes/, name it <slug>.js,
+// edit the fields, then add the slug to data/manifest.js.
+// Never edit a recipe by rewriting a whole other file — one file, one recipe.
+
+RECIPES.push({
+  slug: 'braised-short-ribs',
+  title: 'Red Wine Braised Short Ribs',
+  category: 'Mains',
+  subcat: 'Beef',
+  description: 'A Sunday project worth the afternoon. Bone-in short ribs seared hard, braised three hours in a whole bottle of red wine, and finished with a sauce reduced until it coats a spoon.',
+  yield: 'Serves 6',
+  time: '~4 hr',
+  skill: 'Intermediate',
+  ingredients: [
+    { section: 'Beef' },
+    { item: 'Bone-in English-style short ribs, cut into 4-inch lengths', grams: '2270 g', practical: '5 lb' },
+    { item: 'Kosher salt', grams: '15 g', practical: '1 tbsp' },
+    { item: 'Black pepper', grams: '4 g', practical: '2 tsp' },
+    { item: 'Olive oil', grams: '27 g', practical: '2 tbsp' },
+    { note: 'Buy English-style — thick single-bone chunks, not the thin cross-cut flanken used for Korean barbecue. Flanken is too thin to survive a three-hour braise.' },
+    { section: 'Braise' },
+    { item: 'Onions, chopped', grams: '400 g', practical: '2 onions' },
+    { item: 'Carrots, chopped', grams: '150 g', practical: '2 carrots' },
+    { item: 'Celery, chopped', grams: '100 g', practical: '2 ribs' },
+    { item: 'Garlic, smashed', grams: '18 g', practical: '6 cloves' },
+    { item: 'Tomato paste', grams: '32 g', practical: '2 tbsp' },
+    { item: 'Dry red wine', grams: '720 g', practical: '3 cups' },
+    { item: 'Beef or chicken broth', grams: '480 g', practical: '2 cups' },
+    { item: 'Fresh thyme sprigs', grams: '—', practical: '4 sprigs' },
+    { item: 'Bay leaves', grams: '—', practical: '2 leaves' },
+    { section: 'To finish' },
+    { item: 'Unsalted butter, cold', grams: '28 g', practical: '2 tbsp' },
+    { item: 'Flaky salt and parsley, to serve', grams: '—', practical: 'to taste' },
+  ],
+  steps: [
+    { title: 'Season and dry', body: 'Pat the short ribs completely dry and season all sides with the salt and pepper. Leave them uncovered on a rack at room temperature 45 minutes, or salt them the night before and refrigerate uncovered.', checkpoint: 'The surface should look matte and slightly tacky, never damp.', why: 'A dry surface is the only way to get a real crust. Any moisture has to boil off before browning can start, and by then the meat has overcooked at the edges.' },
+    { title: 'Sear hard', body: 'Heat the oven to 325°F. Warm the oil in a 7-quart Dutch oven over medium-high until it shimmers. Sear the ribs in two or three batches, about 3 minutes per side, without crowding.', checkpoint: 'Deep mahogany brown on every meaty face, and the ribs release from the pot on their own when they are ready to turn.' },
+    { title: 'Build the base', body: 'Pour off all but a thin film of fat. Add the onions, carrots, and celery and cook over medium heat 6–8 minutes. Add the garlic and cook 1 minute, then the tomato paste and cook 2 minutes more, stirring constantly.', checkpoint: 'The tomato paste turns from bright red to brick and starts sticking to the bottom of the pot.', why: 'Cooking out the tomato paste drives off its raw canned edge and caramelizes its sugars — two minutes here is the difference between a sauce that tastes deep and one that tastes like tomato.' },
+    { title: 'Deglaze', body: 'Pour in the wine and scrape every brown patch off the bottom with a wooden spoon. Simmer briskly 8–10 minutes.', checkpoint: 'The volume drops by roughly a third and the harsh alcohol smell is gone, replaced by something sweeter.' },
+    { title: 'Braise', body: 'Add the broth, thyme, and bay. Return the ribs bone-side up, nestling them so the liquid comes about three-quarters of the way up — not covering them. Bring to a simmer, cover, and transfer to the oven for 3 to 3½ hours.', checkpoint: 'A fork slides into the meat with no resistance and twists free, and the meat has pulled back from the bone ends. If it fights you, give it another 30 minutes.' },
+    { title: 'Rest and defat', body: 'Lift the ribs out onto a plate and tent with foil. Strain the liquid into a fat separator or a wide bowl and discard the spent vegetables. Skim off the fat — there will be a lot of it.', checkpoint: 'The remaining liquid looks clear and dark, not cloudy or slicked with orange.' },
+    { title: 'Reduce the sauce', body: 'Return the strained liquid to the pot and boil hard until reduced to about 480 g, 15–25 minutes. Take it off the heat and swirl in the cold butter.', checkpoint: 'The sauce coats the back of a spoon and a finger drawn through leaves a clean line. Taste for salt now, after reducing, never before.' },
+    { title: 'Serve', body: 'Slide the ribs back into the sauce to reheat and glaze for a few minutes. Serve over mashed potatoes or polenta with a spoonful of sauce, flaky salt, and chopped parsley.' },
+  ],
+  notes: [
+    'Use a wine you would actually drink — a Cabernet, Syrah, or Côtes du Rhône. Three cups is most of a bottle, and every flaw in it concentrates as it reduces.',
+    'Best made a day ahead. Cool the ribs in the unreduced liquid overnight; the fat lifts off in a solid sheet the next day, and reheating in the sauce improves the meat.',
+    'Boneless short ribs work but lose the gelatin the bones contribute. If you use them, cut the braise to about 2½ hours.',
+    'Leftover meat shredded into the sauce is excellent over pappardelle. Keeps 4 days refrigerated or 3 months frozen.',
+  ],
+});

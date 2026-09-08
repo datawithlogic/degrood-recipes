@@ -1,0 +1,51 @@
+// TacoTown Recipes — one recipe per file.
+// To add a recipe: copy any file in data/recipes/, name it <slug>.js,
+// edit the fields, then add the slug to data/manifest.js.
+// Never edit a recipe by rewriting a whole other file — one file, one recipe.
+
+RECIPES.push({
+  slug: 'sheet-pan-chicken-fajitas',
+  title: 'Sheet-Pan Chicken Fajitas',
+  category: 'Mains',
+  subcat: 'Chicken',
+  description: 'Chicken strips, peppers, and onions tossed with a homemade fajita spice blend and roasted hot on one pan, finished with lime under the broiler. Weeknight dinner with one dish to wash.',
+  yield: 'Serves 4–6',
+  time: '~30 min',
+  skill: 'Easy',
+  ingredients: [
+    { section: 'Spice blend' },
+    { item: 'Chili powder', grams: '~11 g', practical: '4 tsp' },
+    { item: 'Kosher salt', grams: '~6 g', practical: '2 tsp' },
+    { item: 'Garlic powder', grams: '~3 g', practical: '1 tsp' },
+    { item: 'Onion powder', grams: '~2 g', practical: '1 tsp' },
+    { item: 'Ground cumin', grams: '~2 g', practical: '1 tsp' },
+    { item: 'Smoked paprika', grams: '~1 g', practical: '½ tsp' },
+    { item: 'Black pepper', grams: '~1 g', practical: '½ tsp' },
+    { section: 'Pan' },
+    { item: 'Boneless skinless chicken breasts, cut into ½-inch strips', grams: '~680 g', practical: '1½ lb' },
+    { item: 'Bell peppers, seeded and sliced into strips', grams: '~450 g', practical: '3' },
+    { item: 'Red onion, halved and sliced', grams: '~200 g', practical: '1 large' },
+    { item: 'Olive oil', grams: '40 g', practical: '3 tbsp' },
+    { item: 'White wine vinegar', grams: '~15 g', practical: '1 tbsp' },
+    { section: 'To serve' },
+    { item: 'Lime juice', grams: '~30 g', practical: '2 tbsp' },
+    { item: 'Cilantro, chopped', grams: '~10 g', practical: '¼ cup' },
+    { item: 'Flour tortillas, 6-inch', grams: '—', practical: '12' },
+    { note: 'Sour cream, shredded cheese, salsa, and sliced avocado are all fair game at the table.' },
+  ],
+  steps: [
+    { title: 'Heat the oven', body: 'Position a rack in the upper third of the oven and preheat to 425°F (220°C). Line a large rimmed baking sheet with foil for easy cleanup.', why: 'A hot oven and a high rack push the vegetables toward char rather than steam.' },
+    { title: 'Mix the spice blend', body: 'Stir together the chili powder, salt, garlic powder, onion powder, cumin, smoked paprika, and black pepper in a small bowl.' },
+    { title: 'Slice everything the same size', body: 'Cut the chicken into ½-inch strips and the peppers and onion into strips of similar width.', checkpoint: 'Chicken and vegetable strips look like they belong to the same pile — uniform pieces finish together.' },
+    { title: 'Toss', body: 'In a large bowl combine the chicken, peppers, and onion with the 40 g olive oil, the 15 g vinegar, and the whole spice blend. Toss until every piece is coated and rust-colored.', why: 'Tossing in a bowl rather than on the pan gets the spices onto the chicken instead of scorched on the foil.' },
+    { title: 'Spread out on the pan', body: 'Turn everything onto the baking sheet and spread it into a single layer with space between pieces. If it looks crowded, use a second pan.', checkpoint: 'You can see foil between most pieces — a packed pan steams and goes gray.' },
+    { title: 'Roast', body: 'Roast 20–25 minutes, stirring once at the halfway mark, until the chicken is cooked through to 165°F and the vegetables are tender.', checkpoint: 'Onion edges are translucent and the pepper strips have collapsed slightly.' },
+    { title: 'Broil to finish', body: 'Switch the oven to broil and run it 2–3 minutes, watching the whole time, until the edges of the chicken and peppers take on dark spots.', checkpoint: 'Scattered blackened edges, not an evenly browned pan.' },
+    { title: 'Lime and serve', body: 'Pull the pan out, squeeze the 30 g lime juice over everything, and scatter the cilantro. Toss once and pile into warm tortillas.' },
+  ],
+  notes: [
+    'Boneless skinless thighs work at the same weight and are more forgiving — give them an extra 5 minutes.',
+    'Warm the tortillas directly over a gas burner for a few seconds a side, or wrapped in foil in the oven for the last 5 minutes of roasting.',
+    'Leftovers keep 3 days refrigerated and are better the second day in quesadillas or over rice than reheated as fajitas.',
+  ],
+});
