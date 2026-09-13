@@ -360,12 +360,35 @@ h1, h2, h3, h4 { font-family: var(--font-serif); line-height: 1.25; color: var(-
 .card-thumb {
   width: 100%;
   aspect-ratio: 16/9;
+  overflow: hidden;
   background: var(--bg);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 2.5rem;
   border-bottom: 1px solid var(--border);
+}
+
+.card-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Optional photo above the recipe title. Falls back to nothing if the file is missing. */
+.recipe-hero {
+  width: 100%;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  margin-bottom: 16px;
+  background: var(--bg);
+}
+.recipe-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .card-body {
@@ -500,7 +523,31 @@ h1, h2, h3, h4 { font-family: var(--font-serif); line-height: 1.25; color: var(-
     gap: 40px;
     align-items: start;
   }
-  .ingredients-col { position: sticky; top: 80px; min-width: 0; }
+  /* Sticky, but never taller than the viewport. Without the max-height a long
+     ingredient list sticks with its bottom rows off-screen, and the only way to
+     reach them is to scroll the *method* column all the way down so the sticky
+     element finally releases. Capping the height lets the column scroll on its
+     own instead. */
+  .ingredients-col {
+    position: sticky;
+    top: 80px;
+    max-height: calc(100vh - 96px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    min-width: 0;
+    /* Reserve the scrollbar track so the table doesn't shift sideways when the
+       list is long enough to overflow. */
+    scrollbar-gutter: stable;
+  }
+  /* The heading stays put while the list scrolls under it. */
+  .ingredients-col .section-label {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background: var(--bg);
+    margin-bottom: 0;
+    padding-bottom: 14px;
+  }
   .steps-col { min-width: 0; }
 }
 
@@ -767,7 +814,12 @@ h1, h2, h3, h4 { font-family: var(--font-serif); line-height: 1.25; color: var(-
   .content-area { padding: 0; }
   @media (min-width: 900px) {
     .recipe-body { display: grid; }
-    .ingredients-col { position: static; }
+    .ingredients-col {
+      position: static;
+      max-height: none;
+      overflow: visible;
+    }
+    .ingredients-col .section-label { position: static; }
   }
   .step-num { background: #333 !important; }
 }

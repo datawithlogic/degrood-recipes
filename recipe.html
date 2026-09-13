@@ -269,6 +269,7 @@ function render() {
     </a>
 
     <div class="recipe-header">
+      ${recipe.image ? `<div class="recipe-hero"><img src="${escHtml(recipe.image)}" alt="${escHtml(recipe.title)}" decoding="async" onerror="this.closest('.recipe-hero').remove()"></div>` : ''}
       <span class="cat-badge" style="color:${cat.color};background:${cat.bg}">${emoji} ${escHtml(recipe.category)}${recipe.subcat ? ' › ' + escHtml(recipe.subcat) : ''}</span>
       <h1>${escHtml(recipe.title)}</h1>
       ${recipe.description ? `<p class="description">${escHtml(recipe.description)}</p>` : ''}
@@ -383,6 +384,45 @@ document.addEventListener('click', e => {
     }, 2500);
   });
 });
+
+/* ─── Keep the sticky ingredients column inside the viewport ──────────────
+   CSS alone can't do this. The column sticks at top:80px, so once it's stuck a
+   max-height of calc(100vh - 96px) is exactly right — but *before* it sticks it
+   starts further down the page, and that same height runs its bottom off the
+   screen. On a recipe whose ingredient list is longer than its method, the page
+   never scrolls far enough to pull it back, so the last rows stayed unreachable.
+   Sizing it to the space actually below its top edge fixes both cases: the
+   column always ends just above the fold and scrolls internally to its end. */
+const STICKY_TOP = 80;   // must match .ingredients-col { top: } in style.css
+const BOTTOM_GAP = 16;
+const MIN_COL_H  = 240;
+
+function fitIngredientsCol() {
+  const col = document.querySelector('.ingredients-col');
+  if (!col) return;
+
+  // Below 900px the layout stacks and the column isn't sticky — let it size itself.
+  if (!window.matchMedia('(min-width: 900px)').matches) {
+    col.style.maxHeight = '';
+    return;
+  }
+
+  // Room below the column's current top edge. Before it sticks that's less than
+  // the stuck height, which is exactly the case a CSS-only calc(100vh - …) gets
+  // wrong: the column's bottom ends up under the fold with no way to scroll to
+  // it. Sizing to the real room keeps the bottom on screen at every scroll
+  // position, so the list can always be scrolled to its end.
+  const top  = Math.max(col.getBoundingClientRect().top, 0);
+  const room = Math.max(MIN_COL_H, window.innerHeight - top - BOTTOM_GAP);
+
+  // Only cap when the list would actually overflow. A list that already fits in
+  // the available room is left alone, so no scrollbar appears on short recipes.
+  col.style.maxHeight = col.scrollHeight > room ? room + 'px' : '';
+}
+
+addEventListener('scroll', fitIngredientsCol, { passive: true });
+addEventListener('resize', fitIngredientsCol);
+fitIngredientsCol();
 
 /* ─── Search redirect ── */
 document.getElementById('searchInput').addEventListener('keydown', e => {

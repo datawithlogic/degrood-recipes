@@ -309,7 +309,12 @@ function renderGrid() {
     const label = r.subcat ? `${r.subcat}` : r.category;
     return `
     <a class="recipe-card" href="recipe.html?slug=${encodeURIComponent(r.slug)}">
-      <div class="card-thumb" style="background:${cat.bg}">${cat.emoji}</div>
+      <div class="card-thumb" style="background:${cat.bg}">${
+        r.image
+          ? `<img src="${r.image}" alt="${r.title.replace(/"/g, '&quot;')}" loading="lazy" decoding="async"
+                  onerror="this.parentNode.textContent='${cat.emoji}'">`
+          : cat.emoji
+      }</div>
       <div class="card-body">
         <span class="card-cat" style="color:${cat.color};background:${cat.bg}">${label}</span>
         <div class="card-title">${r.title}</div>
