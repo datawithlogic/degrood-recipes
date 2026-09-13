@@ -1,0 +1,50 @@
+// TacoTown Recipes — one recipe per file.
+// To add a recipe: copy any file in data/recipes/, name it <slug>.js,
+// edit the fields, then add the slug to data/manifest.js.
+// Never edit a recipe by rewriting a whole other file — one file, one recipe.
+
+RECIPES.push({
+  slug: 'apple-fritters',
+  title: 'Mini Apple Fritters',
+  category: 'Sweets',
+  description: 'Craggy little drop fritters packed with tart apple, fried in minutes and dunked in vanilla glaze. Dairy-free as written — oat milk and plant yogurt do all the work.',
+  yield: 'About 20 mini fritters',
+  time: '~45 min',
+  skill: 'Easy',
+  ingredients: [
+    { section: 'Fritter batter' },
+    { item: 'All-purpose flour', grams: '180 g', practical: '1½ cups' },
+    { item: 'Granulated sugar', grams: '65 g', practical: '⅓ cup' },
+    { item: 'Baking powder', grams: '9 g', practical: '2 tsp' },
+    { item: 'Fine salt', grams: '3 g', practical: '½ tsp' },
+    { item: 'Ground cinnamon', grams: '4 g', practical: '1½ tsp' },
+    { item: 'Nutmeg, freshly grated', grams: '—', practical: 'small pinch' },
+    { item: 'Oat milk', grams: '120 g', practical: '½ cup' },
+    { item: 'Whole eggs', grams: '100 g', practical: '2 large' },
+    { item: 'Plain plant-based yogurt', grams: '45 g', practical: '3 tbsp' },
+    { item: 'Granny Smith apples, peeled and diced small', grams: '250 g', practical: '2 medium' },
+    { note: 'Dice the apple no larger than ¼ inch. Bigger pieces stay raw and crunchy in the 6 minutes these spend in the oil.' },
+    { section: 'For frying' },
+    { item: 'Neutral oil (vegetable or canola)', grams: '—', practical: '1 inch deep in skillet' },
+    { section: 'Vanilla glaze' },
+    { item: 'Powdered sugar, sifted', grams: '300 g', practical: '2½ cups' },
+    { item: 'Oat milk', grams: '75 g', practical: '5 tbsp' },
+    { item: 'Vanilla extract', grams: '4 g', practical: '1 tsp' },
+  ],
+  steps: [
+    { title: 'Prep the apples', body: 'Peel, core, and dice the 250 g of apples into pieces no bigger than ¼ inch. Set aside on a paper towel while you mix — surface moisture thins the batter.', checkpoint: 'Dice is uniform and small enough that a spoonful of batter will hold several pieces.' },
+    { title: 'Whisk the dry', body: 'In a large bowl, whisk the 180 g flour, 65 g sugar, 9 g baking powder, 3 g salt, cinnamon, and nutmeg until evenly blended with no streaks of powder.', why: 'Baking powder clumps, and an unmixed clump leaves a soapy, metallic bite in a fritter this small.' },
+    { title: 'Add the wet', body: 'Pour in the eggs, 120 g oat milk, and 45 g yogurt. Fold with a spatula just until no dry flour remains — lumps are fine and wanted.', checkpoint: 'Batter is thick enough to mound on a spoon, not pourable like pancake batter.' },
+    { title: 'Fold in the apples', body: 'Fold the diced apple through in a few strokes. Stop as soon as the pieces are coated.', why: 'Every extra stroke past this point builds gluten, and a chewy fritter is a failed fritter.' },
+    { title: 'Heat the oil', body: 'Pour neutral oil 1 inch deep into a deep skillet or Dutch oven and bring it to 350°F (175°C) over medium heat. Use a thermometer — this is the whole recipe.', checkpoint: 'A drop of batter sizzles immediately and floats within 2 seconds without browning on contact.', why: 'Below 340°F the batter drinks oil and goes greasy; above 365°F the outside sets before the apple softens and the center stays raw.' },
+    { title: 'Fry', body: 'Drop heaping tablespoon portions into the oil, 4 or 5 at a time so the temperature holds. Fry about 3 minutes per side, flipping once.', checkpoint: 'Deep golden brown all over and a skewer through the middle comes out with no wet batter. Internal temp ~200°F.' },
+    { title: 'Drain', body: 'Lift onto a wire rack set over a sheet pan and let the oil come back to 350°F before the next batch. Do not drain on paper towels — the bottoms steam and go soggy.' },
+    { title: 'Glaze', body: 'Whisk the 300 g powdered sugar, 75 g oat milk, and vanilla until completely smooth. Dip each fritter while still warm, turning to coat, then set back on the rack.', checkpoint: 'Glaze ribbons off the whisk and disappears back into itself in about 3 seconds. The coat turns from wet-shiny to matte in 10–15 minutes.' },
+  ],
+  notes: [
+    'Not avoiding dairy? Swap the oat milk for whole milk and the plant yogurt for whole-milk plain yogurt or sour cream, gram for gram. Everything else stays the same.',
+    'Granny Smith is the pick — firm and tart enough to survive the fry and cut the glaze. Honeycrisp or Braeburn also hold. Skip Red Delicious and McIntosh; they collapse into applesauce.',
+    'The source recipe called for 1 tbsp baking powder. That is roughly double what 180 g of flour can carry without a bitter aftertaste, so this is dialed back to 2 tsp.',
+    'Best within an hour of frying. They keep overnight in a single layer at room temperature, uncovered so the glaze does not weep; re-crisp 4–5 minutes in a 350°F oven.',
+  ],
+});

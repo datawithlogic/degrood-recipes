@@ -1,0 +1,53 @@
+// TacoTown Recipes — one recipe per file.
+// To add a recipe: copy any file in data/recipes/, name it <slug>.js,
+// edit the fields, then add the slug to data/manifest.js.
+// Never edit a recipe by rewriting a whole other file — one file, one recipe.
+
+RECIPES.push({
+  slug: 'cinnamon-sugar-donuts',
+  title: 'Milk Bread Cinnamon Sugar Donuts',
+  category: 'Sweets',
+  description: 'A big batch of pull-apart soft milk bread dough, fried and tumbled warm in cinnamon sugar. Same tangzhong trick as our glazed donuts, but a leaner, shreddier milk-bread crumb and no glaze — the sugar goes on dry while they steam.',
+  yield: 'About 18 donuts plus holes',
+  time: '~1 hr active + 2 hr rise',
+  skill: 'Intermediate',
+  ingredients: [
+    { section: 'Tangzhong' },
+    { item: 'All-purpose flour', grams: '36 g', practical: '¼ cup' },
+    { item: 'Whole milk', grams: '60 g', practical: '¼ cup' },
+    { item: 'Water', grams: '120 g', practical: '½ cup' },
+    { section: 'Dough' },
+    { item: 'Whole milk, warmed to 105°F', grams: '244 g', practical: '1 cup' },
+    { item: 'Instant yeast', grams: '9 g', practical: '1 tbsp' },
+    { item: 'Granulated sugar, for the yeast', grams: '25 g', practical: '2 tbsp' },
+    { item: 'Granulated sugar, for the dough', grams: '100 g', practical: '½ cup' },
+    { item: 'Whole eggs', grams: '100 g', practical: '2 large' },
+    { item: 'Vanilla extract', grams: '12 g', practical: '1 tbsp' },
+    { item: 'All-purpose flour', grams: '624 g', practical: '5¼ cups' },
+    { item: 'Fine salt', grams: '9 g', practical: '1½ tsp' },
+    { item: 'Unsalted butter, softened', grams: '85 g', practical: '6 tbsp' },
+    { note: 'Total flour is 660 g counting the tangzhong, for 424 g of liquid — about 64% hydration. Resist adding flour beyond this; the dough is meant to be tacky.' },
+    { section: 'For frying' },
+    { item: 'Neutral oil (vegetable or canola)', grams: '—', practical: '3 inches deep in pot' },
+    { section: 'Cinnamon sugar coating' },
+    { item: 'Granulated sugar', grams: '200 g', practical: '1 cup' },
+    { item: 'Ground cinnamon', grams: '16 g', practical: '2 tbsp' },
+  ],
+  steps: [
+    { title: 'Cook the tangzhong', body: 'Whisk the 36 g flour, 60 g milk, and 120 g water smooth in a small saucepan. Cook over medium-low, stirring constantly, 3–5 minutes.', checkpoint: 'It thickens to a loose pudding and the whisk leaves a trail that closes slowly — about 150°F. Cool to room temperature before it goes near the yeast.', why: 'Pre-gelatinized starch holds several times its weight in water, so the crumb stays soft a full day after frying instead of going dry and bready by evening.' },
+    { title: 'Bloom the yeast', body: 'Stir the 9 g yeast and the 25 g of sugar into the 244 g of warm milk. Leave it 5 minutes.', checkpoint: 'Surface is foamy and smells bready. If nothing happens, the yeast is dead — start over.' },
+    { title: 'Build the wet mix', body: 'Whisk the remaining 100 g sugar, the eggs, the vanilla, and the cooled tangzhong into the milk until uniform, with no lumps of paste left.' },
+    { title: 'Mix and rest', body: 'Add the 624 g flour and 9 g salt. Mix on low with a dough hook to a rough, shaggy mass, then cover and rest 10 minutes.', why: 'That rest lets the flour hydrate on its own, which cuts several minutes off the kneading and keeps the butter step from turning into a soupy mess.' },
+    { title: 'Work in the butter', body: 'With the mixer on low, add the 85 g of softened butter in 6 additions, waiting until each disappears before the next. Then knead on medium 8–10 minutes.', checkpoint: 'Dough clears the sides of the bowl, sticks slightly to the bottom, and passes a windowpane — stretched thin enough to see light through without tearing. Tacky to the touch, but it should not smear on your fingers.' },
+    { title: 'First rise', body: 'Cover and rise at room temperature 45–60 minutes.', checkpoint: 'Doubled, and a floured fingertip poked half an inch into the dough leaves a dent that fills back only partway.' },
+    { title: 'Roll and cut', body: 'Turn out onto a lightly floured surface and roll to ½ inch thick. Cut with a 3" round and a 1" hole cutter, and cut directly on a parchment-lined sheet so each donut can go into the oil on its own square. Re-roll scraps once.', why: 'Lifting a proofed donut by hand deflates it. Carrying it on its parchment square and peeling the paper off in the oil keeps the rise you just built.' },
+    { title: 'Second proof', body: 'Cover loosely and proof 30 minutes at room temperature. Meanwhile heat the oil to 350°F (175°C) and stir the 200 g sugar with the 16 g cinnamon in a wide bowl.', checkpoint: 'Donuts look visibly puffed and feel like a marshmallow — light and airy, not dense. Stop here; overproofed donuts collapse and drink oil.' },
+    { title: 'Fry and coat', body: 'Fry 3 at a time, 60–90 seconds per side, holding the oil at 350°F between batches. Drain 30 seconds on a rack, then toss each donut in the cinnamon sugar while it is still hot.', checkpoint: 'Deep golden with a pale band around the equator, internal temp ~195°F. Sugar clings on contact — if it slides off, the donut cooled too long.' },
+  ],
+  notes: [
+    'The source called for 2 packets of yeast (about 14 g). At 660 g of flour that is over 2%, which races the proof and leaves a yeasty tang under the cinnamon. 9 g is the tested range for an enriched dough like this and gives you a workable 45–60 minute rise.',
+    'The source listed "5–6 cups flour" as a range. Working backwards from the 424 g of total liquid at the 64% hydration a milk bread dough wants lands on 660 g total flour, and that is the number to weigh.',
+    'Overnight version: after the butter is worked in, refrigerate the dough 8–16 hours instead of the first rise. Cold dough rolls and cuts far more cleanly in the morning — let the cut donuts proof 45–60 minutes since they start chilled.',
+    'Best within hours. They keep a day in an airtight container at room temperature thanks to the tangzhong; do not refrigerate. Fried holes are the cook\'s snack and do not keep at all.',
+  ],
+});

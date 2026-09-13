@@ -83,4 +83,13 @@ const RECIPE_FILES = [
   'drip-coffee',
   'hot-cocoa',
   'creamed-chipped-beef',
+  'focaccia',
+  'apple-fritters',
+  'cinnamon-sugar-donuts',
+  'sourdough-cinnamon-roll-bites',
+  'pork-shrimp-wontons',
+  'steak-lo-mein',
+  'chicken-stuffed-flatbread',
+  'buttermilk-biscuits',
+  'cheesy-garlic-bread',
 ];

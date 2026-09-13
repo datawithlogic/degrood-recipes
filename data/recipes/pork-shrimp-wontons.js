@@ -1,0 +1,52 @@
+// TacoTown Recipes — one recipe per file.
+// To add a recipe: copy any file in data/recipes/, name it <slug>.js,
+// edit the fields, then add the slug to data/manifest.js.
+// Never edit a recipe by rewriting a whole other file — one file, one recipe.
+
+RECIPES.push({
+  slug: 'pork-shrimp-wontons',
+  title: 'Pork and Shrimp Wontons',
+  category: 'Mains',
+  subcat: 'Pork',
+  description: 'Smashed wontons — the filling gets smeared flat across an open wrapper instead of folded, then pan-fried filling-side down until the pork crisps into a lacy brown crust and the wrapper goes cracker-crisp. All the payoff of a fried wonton with none of the pleating.',
+  yield: 'Makes 30 wontons, serves 4',
+  time: '~45 min',
+  skill: 'Easy',
+  ingredients: [
+    { section: 'Filling' },
+    { item: 'Ground pork (not lean — 80/20 or fattier)', grams: '454 g', practical: '1 lb' },
+    { item: 'Raw shrimp, peeled and chopped into pea-sized bits', grams: '115 g', practical: '½ cup' },
+    { item: 'Leek, white and pale green only, finely chopped', grams: '45 g', practical: '½ cup' },
+    { item: 'Scallions, thinly sliced', grams: '50 g', practical: '½ cup' },
+    { item: 'Light soy sauce', grams: '18 g', practical: '1 tbsp' },
+    { item: 'Dark soy sauce', grams: '18 g', practical: '1 tbsp' },
+    { item: 'Oyster sauce', grams: '21 g', practical: '1 tbsp' },
+    { item: 'Chicken bouillon powder', grams: '6 g', practical: '2 tsp' },
+    { item: 'Granulated sugar', grams: '8 g', practical: '2 tsp' },
+    { item: 'Ground black pepper', grams: '2 g', practical: '1 tsp' },
+    { item: 'Garlic, finely minced', grams: '9 g', practical: '3 cloves' },
+    { note: 'This is half the soy sauce the viral version calls for. Four tablespoons of liquid soy into a pound of pork makes a filling that slumps off the wrapper and runs in the pan — and with the oyster sauce and bouillon already in there, it lands aggressively salty. Two tablespoons total gives you a paste that holds a ridge under a spoon.' },
+    { section: 'Assembly and frying' },
+    { item: 'Round wonton wrappers', grams: '240 g', practical: '30 wrappers' },
+    { item: 'Neutral high-smoke-point oil', grams: '41 g', practical: '3 tbsp' },
+    { section: 'To serve' },
+    { item: 'Chili oil with crisp', grams: '—', practical: 'to taste' },
+    { item: 'Chinkiang black vinegar', grams: '—', practical: 'to taste' },
+    { item: 'Light soy sauce', grams: '—', practical: 'to taste' },
+  ],
+  steps: [
+    { title: 'Mix the filling', body: 'Combine the pork, shrimp, leek, scallions, both soy sauces, oyster sauce, bouillon, sugar, black pepper, and minced garlic in a large bowl. Stir hard in one direction for a solid minute until the mixture tightens up and looks like a paste rather than loose crumbles.', checkpoint: 'Drag a spoon through it — the trench should hold its shape instead of filling back in.', why: 'Stirring one direction aligns the meat proteins into a sticky matrix. That is what lets a thin smear cling to the wrapper in a hot pan instead of sliding off.' },
+    { title: 'Chill it', body: 'Cover the bowl and refrigerate 15–20 minutes while you set up your wrapping station.', checkpoint: 'Cold and firm, not greasy at the surface.', why: 'Warm pork fat smears into a slick; cold pork fat spreads like frosting and stays where you put it.' },
+    { title: 'Smear the wrappers', body: 'Lay out a few wrappers at a time on a dry board. Drop about 1 tablespoon of filling in the center of each and use the back of a spoon to smear it into a thin, even layer all the way to the edge — no border, no folding. Aim for the thickness of a slice of deli ham. Keep the unused wrappers under a damp towel.', checkpoint: 'You should still faintly see wrapper through the thinnest spots. Thicker than about ¼ inch and the pork will not cook through before the wrapper burns.' },
+    { title: 'Heat the pan', body: 'Heat a large nonstick or cast-iron skillet over medium-high. Add enough of the oil to slick the bottom — roughly 14 g per batch — and wait until it shimmers and moves like water.', checkpoint: 'A fleck of filling dropped in sizzles immediately and steadily, not violently.' },
+    { title: 'Fry filling-side down', body: 'Lay in 3 or 4 wontons, meat side down, without crowding. Press each one flat with a spatula for a couple of seconds. Cook undisturbed 2–3 minutes.', checkpoint: 'Lift a corner: the pork should be deep brown and lacy at the edges, and it will have visibly pulled away from the wrapper rim. No pink anywhere around the perimeter.', why: 'Direct contact with the pan does all the cooking here. A smear this thin is done in two minutes, which is why no splash of water and no lid are needed — steaming would only soften the wrapper you are trying to make crisp.' },
+    { title: 'Flip and finish', body: 'Flip and cook 45–60 seconds more, just until the bare wrapper blisters and turns golden. Move to a rack — not paper towels — and repeat with the remaining oil and wontons.', checkpoint: 'The wrapper side crackles audibly when pressed; the pork side is brown and set, not glossy.' },
+    { title: 'Serve hot', body: 'Stir together soy sauce, chili oil, and black vinegar to taste in a small bowl and serve alongside. Eat them within a few minutes — these go soft as they sit.' },
+  ],
+  notes: [
+    'A rack, not a plate: stacked on a plate they steam themselves limp in about ninety seconds.',
+    'Square wrappers work identically — you just get rectangles instead of discs. Round ones brown a little more evenly because there are no thin corners to scorch.',
+    'Make-ahead: the filling keeps covered in the fridge for 2 days and actually smears better on day two. Smeared wontons do not hold — the wrapper goes soggy within the hour — so assemble right before frying.',
+    'Leftovers reheat only in a dry skillet or air fryer at 375°F for 3–4 minutes. The microwave turns them to paste.',
+  ],
+});
