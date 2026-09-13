@@ -9,7 +9,7 @@ RECIPES.push({
   category: 'Sweets',
   description: 'A big batch of pull-apart soft milk bread dough, fried and tumbled warm in cinnamon sugar. Same tangzhong trick as our glazed donuts, but a leaner, shreddier milk-bread crumb and no glaze — the sugar goes on dry while they steam.',
   yield: 'About 18 donuts plus holes',
-  time: '~1 hr active + 2 hr rise',
+  time: '~3½ hr same day, or overnight + ~2½ hr',
   skill: 'Intermediate',
   ingredients: [
     { section: 'Tangzhong' },
@@ -39,15 +39,14 @@ RECIPES.push({
     { title: 'Build the wet mix', body: 'Whisk the remaining 100 g sugar, the eggs, the vanilla, and the cooled tangzhong into the milk until uniform, with no lumps of paste left.' },
     { title: 'Mix and rest', body: 'Add the 624 g flour and 9 g salt. Mix on low with a dough hook to a rough, shaggy mass, then cover and rest 10 minutes.', why: 'That rest lets the flour hydrate on its own, which cuts several minutes off the kneading and keeps the butter step from turning into a soupy mess.' },
     { title: 'Work in the butter', body: 'With the mixer on low, add the 85 g of softened butter in 6 additions, waiting until each disappears before the next. Then knead on medium 8–10 minutes.', checkpoint: 'Dough clears the sides of the bowl, sticks slightly to the bottom, and passes a windowpane — stretched thin enough to see light through without tearing. Tacky to the touch, but it should not smear on your fingers.' },
-    { title: 'First rise', body: 'Cover and rise at room temperature 45–60 minutes.', checkpoint: 'Doubled, and a floured fingertip poked half an inch into the dough leaves a dent that fills back only partway.' },
+    { title: 'First rise — same day or overnight', body: 'Cover the bowl and pick a path.\n\n• Same day: rise at room temperature 45–60 minutes.\n• Overnight (cleaner donuts, deeper flavor): skip the room-temperature rise entirely — cover the bowl tightly and refrigerate 8–16 hours. Roll and cut straight from the fridge, and give the cut donuts 60–90 minutes at the second proof instead of 30, since they start cold.\n\nEither way the dough is done when it has risen and the gluten has gone slack.', checkpoint: 'Doubled, and a floured fingertip poked half an inch into the dough leaves a dent that fills back only partway. Chilled dough looks flatter than it is — let it sit out a few minutes and judge it by the poke, not by height in the bowl.', why: 'The overnight is the one I would pick: cold dough rolls to an even ½ inch and cuts a clean edge instead of dragging and snapping back, and the long chill puts real flavor under the cinnamon. Same day is genuinely faster, and donuts you want this afternoon are a good enough reason.' },
     { title: 'Roll and cut', body: 'Turn out onto a lightly floured surface and roll to ½ inch thick. Cut with a 3" round and a 1" hole cutter, and cut directly on a parchment-lined sheet so each donut can go into the oil on its own square. Re-roll scraps once.', why: 'Lifting a proofed donut by hand deflates it. Carrying it on its parchment square and peeling the paper off in the oil keeps the rise you just built.' },
-    { title: 'Second proof', body: 'Cover loosely and proof 30 minutes at room temperature. Meanwhile heat the oil to 350°F (175°C) and stir the 200 g sugar with the 16 g cinnamon in a wide bowl.', checkpoint: 'Donuts look visibly puffed and feel like a marshmallow — light and airy, not dense. Stop here; overproofed donuts collapse and drink oil.' },
+    { title: 'Second proof', body: 'Cover loosely and proof 30 minutes at room temperature — 60–90 minutes if the dough came out of the fridge. Meanwhile heat the oil to 350°F (175°C) and stir the 200 g sugar with the 16 g cinnamon in a wide bowl.', checkpoint: 'Donuts look visibly puffed and feel like a marshmallow — light and airy, not dense. Stop here; overproofed donuts collapse and drink oil.' },
     { title: 'Fry and coat', body: 'Fry 3 at a time, 60–90 seconds per side, holding the oil at 350°F between batches. Drain 30 seconds on a rack, then toss each donut in the cinnamon sugar while it is still hot.', checkpoint: 'Deep golden with a pale band around the equator, internal temp ~195°F. Sugar clings on contact — if it slides off, the donut cooled too long.' },
   ],
   notes: [
     'The source called for 2 packets of yeast (about 14 g). At 660 g of flour that is over 2%, which races the proof and leaves a yeasty tang under the cinnamon. 9 g is the tested range for an enriched dough like this and gives you a workable 45–60 minute rise.',
     'The source listed "5–6 cups flour" as a range. Working backwards from the 424 g of total liquid at the 64% hydration a milk bread dough wants lands on 660 g total flour, and that is the number to weigh.',
-    'Overnight version: after the butter is worked in, refrigerate the dough 8–16 hours instead of the first rise. Cold dough rolls and cuts far more cleanly in the morning — let the cut donuts proof 45–60 minutes since they start chilled.',
     'Best within hours. They keep a day in an airtight container at room temperature thanks to the tangzhong; do not refrigerate. Fried holes are the cook\'s snack and do not keep at all.',
   ],
 });
