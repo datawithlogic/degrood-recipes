@@ -102,4 +102,6 @@ const RECIPE_FILES = [
   'wonton-soup',
   'stir-fry-sauce',
   'dumpling-dipping-sauce',
+  'brown-sauce-chicken',
+  'skirt-steak-tacos',
 ];

@@ -1,0 +1,50 @@
+// TacoTown Recipes — one recipe per file.
+// To add a recipe: copy any file in data/recipes/, name it <slug>.js,
+// edit the fields, then add the slug to data/manifest.js.
+// Never edit a recipe by rewriting a whole other file — one file, one recipe.
+
+RECIPES.push({
+  slug: 'brown-sauce-chicken',
+  title: 'Seared Chicken Thighs with Brown Sauce Glaze',
+  category: 'Mains',
+  subcat: 'Chicken',
+  description: 'Bone-in thighs started in a cold pan so the skin renders itself crisp, then finished with a glossy Chinese-style brown sauce built in the same skillet from the fond. The glaze goes on at the very end — never during the sear.',
+  yield: 'Serves 4',
+  time: '~35 min',
+  skill: 'Intermediate',
+  ingredients: [
+    { section: 'Chicken' },
+    { item: 'Bone-in skin-on chicken thighs', grams: '200 g each', practical: '4 thighs' },
+    { item: 'Kosher salt', grams: '—', practical: 'a light pinch per thigh' },
+    { note: 'Salt lightly — about half what you would normally use. The soy and oyster sauce bring a lot of salt to the finished dish, and this is the one place people over-season.' },
+    { section: 'Brown sauce glaze' },
+    { item: 'Chicken stock', grams: '180 g', practical: '¾ cup' },
+    { item: 'Light soy sauce', grams: '27 g', practical: '1½ tbsp' },
+    { item: 'Oyster sauce', grams: '21 g', practical: '1 tbsp' },
+    { item: 'Dark soy sauce', grams: '6 g', practical: '1 tsp' },
+    { item: 'Shaoxing wine', grams: '15 g', practical: '1 tbsp' },
+    { item: 'Brown sugar, packed', grams: '13 g', practical: '1 tbsp' },
+    { item: 'Garlic, minced', grams: '—', practical: '2 cloves' },
+    { item: 'Ginger, grated', grams: '6 g', practical: '1 tbsp' },
+    { section: 'Slurry and finish' },
+    { item: 'Cornstarch', grams: '8 g', practical: '1 tbsp' },
+    { item: 'Cold water', grams: '15 g', practical: '1 tbsp' },
+    { item: 'Toasted sesame oil', grams: '5 g', practical: '1 tsp' },
+  ],
+  steps: [
+    { title: 'Dry and salt the thighs', body: 'Pat the thighs bone-dry on both sides with paper towels, paying particular attention to the skin — press, do not wipe. Season lightly with kosher salt on both sides and leave them uncovered on a plate while you measure out the sauce.', checkpoint: 'The skin looks matte and papery rather than slick or damp. Any surface moisture steams instead of browning.' },
+    { title: 'Mix the sauce and the slurry separately', body: 'In a measuring cup, combine the 180 g stock, 27 g light soy sauce, 21 g oyster sauce, 6 g dark soy sauce, 15 g Shaoxing wine, and 13 g brown sugar. In a second small bowl, whisk the 8 g cornstarch into the 15 g cold water until smooth and milky. Keep them apart — the slurry goes in last.', checkpoint: 'No sugar grit at the bottom of the cup, and the slurry pours like thin cream with nothing settled underneath.' },
+    { title: 'Cold pan, skin down', body: 'Lay the thighs skin-side down in a dry cold 12-inch skillet, then set it over medium heat. Leave them completely alone for 10–12 minutes while the fat renders out.', checkpoint: 'The skin releases from the pan on its own when it is ready — if you have to pry a thigh up, it is not done. You should hear a steady moderate sizzle and see a shallow pool of rendered fat, deep golden skin underneath.', why: 'Starting cold gives the fat time to render before the skin sets, which is what makes it crisp rather than leathery. A hot pan seizes the skin shut and traps the fat behind it.' },
+    { title: 'Flip and cook through', body: 'Turn the thighs and cook 4–5 minutes more, until an instant-read thermometer in the thickest part away from the bone reads 175°F. Move them to a plate, skin-side up, and let them rest.', checkpoint: '175°F, not 165°F. Dark meat needs the extra time in the 175–185°F window to convert its collagen to gelatin — that conversion is what makes a thigh tender, and pulling at 165°F leaves it chewy, not juicy.' },
+    { title: 'Bloom the aromatics', body: 'Pour off all but about a tablespoon of the rendered fat, leaving every browned bit stuck to the pan. Set it back over medium heat, add the garlic and ginger, and stir constantly for 30 seconds.', checkpoint: 'Fragrant and sizzling, still pale blond. Garlic goes from aromatic to acrid in about fifteen seconds at this point, so have the sauce cup in your other hand.' },
+    { title: 'Deglaze and reduce', body: 'Pour in the sauce mixture all at once and scrape the pan bottom with a wooden spoon until the fond lifts and dissolves. Simmer briskly 3–4 minutes to reduce it by about a third.', checkpoint: 'Reduced to roughly the volume you want to serve — around a generous ½ cup, still loose and pourable. Stop here; do not cook it down to a syrup.', why: 'The cornstarch does the thickening, not evaporation. Over-reducing first gives you a salty, gluey lacquer once the slurry hits it, because you have concentrated the salt and then thickened it on top of that.' },
+    { title: 'Thicken', body: 'Give the slurry a final stir, then drizzle about three-quarters of it into the bubbling sauce while swirling the pan. Cook 30–60 seconds, then add the rest only if you want it thicker.', checkpoint: 'Glossy and clinging — it coats the back of a spoon and a finger drawn through leaves a clean track. Cloudy, floury, or thin means it has not reached a full boil yet; keep it bubbling.', why: 'Cornstarch only reaches full thickening power once it actually boils, and it keeps setting for several seconds afterward. Adding all of it at once is how you overshoot past the point you can walk back.' },
+    { title: 'Finish and plate', body: 'Kill the heat and stir in the 5 g sesame oil. Return the thighs to the pan skin-side up, or set them on plates, and spoon the glaze over the meat side and around the base — never over the top of the skin.', checkpoint: 'The skin still crackles under a fork. Crisp skin goes soft within seconds of sitting in sauce, so keep the glaze below the waterline and serve right away.' },
+  ],
+  notes: [
+    'This is the same lineup as the All-Purpose Stir-Fry Sauce on this site — stock, light soy, oyster, dark soy, Shaoxing, brown sugar, sesame oil — just concentrated and thickened harder so it clings to a piece of chicken instead of coating vegetables. If you already have a jar of it mixed, use 160 g of that in place of everything from the stock through the brown sugar, reduce it by a third, then thicken with the same slurry.',
+    'Boneless skinless thighs: skip the cold-pan start. Hot pan with a film of oil, 4–5 minutes a side to 175°F, then build the glaze exactly the same way in the drippings.',
+    'If the glaze goes gluey, pull it off the heat and whisk in a splash of stock until it loosens. If it stays thin after a minute, it never came to a real boil — turn the heat up and let it bubble hard for another 30 seconds before adding any more slurry.',
+    'Leftovers keep 3 days in the fridge. Store the glaze separate from the chicken if you can, reheat the thighs skin-up in a 400°F oven or air fryer to bring the skin back, and warm the glaze on its own — microwaving them together guarantees soft skin.',
+  ],
+});
