@@ -1,0 +1,52 @@
+// TacoTown Recipes — one recipe per file.
+// To add a recipe: copy any file in data/recipes/, name it <slug>.js,
+// edit the fields, then add the slug to data/manifest.js.
+// Never edit a recipe by rewriting a whole other file — one file, one recipe.
+
+RECIPES.push({
+  slug: 'soy-braised-chicken',
+  title: 'Soy-Braised Chicken Thighs',
+  category: 'Mains',
+  subcat: 'Chicken',
+  description: 'A weeknight red braise. Bone-in thighs get their skin rendered hard in the pan, then simmer in Shaoxing wine, ginger, and two soy sauces until the sauce reduces to a dark clinging glaze. On the table in about an hour.',
+  yield: 'Serves 4',
+  time: '~1 hr',
+  skill: 'Easy',
+  ingredients: [
+    { section: 'Chicken' },
+    { item: 'Bone-in skin-on chicken thighs, about 170 g each', grams: '1.02 kg', practical: '6 thighs' },
+    { item: 'Diamond Crystal kosher salt', grams: '4 g', practical: '1½ tsp' },
+    { item: 'Neutral oil (canola or vegetable)', grams: '14 g', practical: '1 tbsp' },
+    { item: 'Rock sugar, crushed, or granulated sugar', grams: '25 g', practical: '2 tbsp' },
+    { section: 'Braise' },
+    { item: 'Shaoxing wine', grams: '60 g', practical: '¼ cup' },
+    { item: 'Light soy sauce', grams: '54 g', practical: '3 tbsp' },
+    { item: 'Dark soy sauce', grams: '19 g', practical: '1 tbsp' },
+    { item: 'Chicken stock or water', grams: '360 g', practical: '1½ cups' },
+    { item: 'Fresh ginger, sliced into coins', grams: '25 g', practical: '5 slices' },
+    { item: 'Garlic cloves, smashed', grams: '12 g', practical: '4 cloves' },
+    { item: 'Scallions, cut into 2-inch lengths', grams: '30 g', practical: '3 scallions' },
+    { item: 'Star anise pod', grams: '—', practical: '1' },
+    { note: 'The dark soy here is a three-to-one minority partner to the light soy, and that is on purpose. Light soy is the salt in this pot. Dark soy is a pigment — aged long and cut with molasses or caramel, less salty than light soy, and used by the spoonful to turn the sauce that lacquered red-brown. On chicken, which browns paler than pork, a single tablespoon is plenty.' },
+    { section: 'To finish' },
+    { item: 'Toasted sesame oil', grams: '5 g', practical: '1 tsp' },
+    { item: 'Scallion greens, thinly sliced', grams: '10 g', practical: '1 scallion' },
+    { item: 'Steamed white rice, for serving', grams: '—', practical: 'to taste' },
+  ],
+  steps: [
+    { title: 'Dry and salt the thighs', body: 'Pat the thighs completely dry on both sides with paper towels and season them all over with the salt. Let them sit while you slice the ginger and scallions.', checkpoint: 'The skin feels papery and slightly tacky, not damp. Wet skin will not brown.' },
+    { title: 'Render the skin', body: 'Heat the oil in a wide heavy skillet or Dutch oven over medium. Lay the thighs skin side down and leave them alone 8–10 minutes, pressing once early so the whole surface makes contact. Flip and sear 2 minutes on the meat side, then move them to a plate.', checkpoint: 'The skin is deep golden brown and releases from the pan on its own. A generous layer of rendered fat has come out.', why: 'Most of the skin fat has to come out now — once the braise starts there is no heat high enough to render it, and unrendered chicken skin in a wet pot goes slack and greasy.' },
+    { title: 'Melt the sugar', body: 'Pour off all but about a tablespoon of fat. Lower the heat and add the sugar to the pan, stirring gently until it melts into a light amber syrup, 2–3 minutes.', checkpoint: 'Fully liquid and the color of weak tea. It goes from caramel to burnt in seconds, so keep stirring and keep the heat low.' },
+    { title: 'Bloom the aromatics and deglaze', body: 'Add the ginger, garlic, scallion lengths, and star anise and stir 30 seconds. Pour in the 60 g Shaoxing wine and scrape the pan bottom clean as it bubbles, about 1 minute.', checkpoint: 'The alcohol bite is gone and the pan smells nutty and gingery; all the browned fond has lifted.', why: 'Shaoxing does the same job on chicken it does on pork — it strips the faintly metallic, wet-poultry smell that braising can amplify, and leaves a malty sweetness behind.' },
+    { title: 'Build the braise', body: 'Stir in the 54 g light soy sauce, the 19 g dark soy sauce, and the 360 g chicken stock. Return the thighs skin side up, nestling them so the liquid comes about two-thirds up the sides but does not submerge the skin.', checkpoint: 'The liquid is a clear reddish-brown and the crisped skin sits proud of the surface.' },
+    { title: 'Simmer', body: 'Bring to a boil, then cover and reduce to a gentle simmer. Cook 25–30 minutes, spooning liquid over the tops once or twice.', checkpoint: 'An instant-read thermometer into the thickest part of a thigh, clear of the bone, reads 175°F.', why: 'Pull these at 175°F, not the 165°F you would use for breast. Thigh meat is loaded with connective tissue that only melts into gelatin in that last ten degrees — chicken thigh pulled at 165°F is technically done and still chewy, while at 175°F it is silky. Dark meat has enough fat and collagen that the extra time makes it more tender, not drier.' },
+    { title: 'Reduce to a glaze', body: 'Move the thighs to a plate. Fish out the ginger, garlic, star anise, and scallion lengths. Raise the heat to high and boil the liquid hard, stirring, 6–10 minutes.', checkpoint: 'The sauce darkens, thickens, and coats a spoon — a spatula dragged across the pan bottom leaves a clear trail that fills back in slowly.' },
+    { title: 'Glaze and serve', body: 'Kill the heat, stir in the sesame oil, and return the thighs to the pan, turning them once to coat and leaving them skin side up. Scatter the scallion greens over and serve with rice, with the pan sauce spooned around.', checkpoint: 'The skin is glossy mahogany and the sauce clings instead of pooling.' },
+  ],
+  notes: [
+    'Never swap the soy sauces one for one. Reaching for dark soy as the salt gives a muddy, almost black sauce with a bitter molasses edge; using only light soy gives a pale, disappointingly thin-looking braise that is also far too salty. The Woks of Life points to Pearl River Bridge for both bottles.',
+    'No Shaoxing wine: dry sherry substitutes one for one and is the standard swap. Skip any bottle labeled "cooking wine" — the added salt throws the seasoning off and adds nothing.',
+    'Drumsticks or whole leg quarters work with the same liquid; add 10 minutes to the simmer for leg quarters and still pull them at 175°F. Boneless skinless thighs are not worth it here — the skin and bone are most of the sauce.',
+    'Leftovers keep 4 days and are better on day two. Reheat covered over low heat with a splash of water; the glaze sets solid in the fridge and needs the liquid back.',
+  ],
+});

@@ -1,0 +1,50 @@
+// TacoTown Recipes — one recipe per file.
+// To add a recipe: copy any file in data/recipes/, name it <slug>.js,
+// edit the fields, then add the slug to data/manifest.js.
+// Never edit a recipe by rewriting a whole other file — one file, one recipe.
+
+RECIPES.push({
+  slug: 'hong-shao-rou',
+  title: 'Red-Braised Pork Belly (Hong Shao Rou)',
+  category: 'Mains',
+  subcat: 'Pork',
+  description: 'The dish that explains dark soy sauce. Cubes of skin-on pork belly are blanched, browned in melted sugar, then simmered in Shaoxing wine and two kinds of soy until the fat goes translucent and the sauce reduces to a mahogany lacquer that clings to every piece.',
+  yield: 'Serves 4 with rice',
+  time: '~1¾ hr',
+  skill: 'Intermediate',
+  ingredients: [
+    { section: 'Pork' },
+    { item: 'Skin-on pork belly, cut into 1-inch cubes', grams: '900 g', practical: '2 lb' },
+    { item: 'Neutral oil (canola or vegetable)', grams: '27 g', practical: '2 tbsp' },
+    { item: 'Rock sugar, crushed, or granulated sugar', grams: '25 g', practical: '2 tbsp' },
+    { note: 'Buy belly with the skin on if you can. The skin is what turns gelatinous and gives the sauce its body — skinless belly makes a good dish, but a thinner one.' },
+    { section: 'Braise' },
+    { item: 'Shaoxing wine', grams: '80 g', practical: '⅓ cup' },
+    { item: 'Light soy sauce', grams: '54 g', practical: '3 tbsp' },
+    { item: 'Dark soy sauce', grams: '28 g', practical: '1½ tbsp' },
+    { item: 'Hot water', grams: '720 g', practical: '3 cups' },
+    { item: 'Fresh ginger, sliced into coins', grams: '20 g', practical: '4 slices' },
+    { item: 'Scallions, cut into 2-inch lengths', grams: '30 g', practical: '2 scallions' },
+    { item: 'Star anise pods', grams: '—', practical: '2' },
+    { note: 'Two soy sauces, two jobs. The light soy is the salt. The dark soy is the color — it is aged far longer and cut with molasses or caramel, so it paints the pork that deep red-brown and adds a faint bittersweet depth. It is not a saltier soy sauce and it is not a substitute for one.' },
+    { section: 'To serve' },
+    { item: 'Steamed white rice', grams: '—', practical: 'to taste' },
+    { item: 'Scallion greens, thinly sliced', grams: '10 g', practical: '1 scallion' },
+  ],
+  steps: [
+    { title: 'Blanch the pork', body: 'Put the pork cubes in a pot and cover with cold water. Bring to a boil over high heat and let it go 2 minutes, skimming the gray foam that rises. Drain, rinse the cubes under running water, and pat them thoroughly dry. Wash the pot.', checkpoint: 'The meat is uniformly opaque and pale, the rinse water runs clear, and no scum clings to the cubes.', why: 'Blanching pulls out blood and impurities that would otherwise cloud the braise and leave a muddy, livery edge. Starting from cold water draws them out instead of sealing them in.' },
+    { title: 'Melt the sugar', body: 'Heat the oil and sugar together in a wok or heavy pot over low heat, stirring gently. The sugar will melt and go from clear to a light amber syrup. Do not walk away — this takes 2–3 minutes and turns from caramel to burnt fast.', checkpoint: 'The sugar is fully liquid and the color of weak tea. If it smells acrid or looks like coffee, dump it and start over.' },
+    { title: 'Brown the pork', body: 'Raise the heat to medium and add the dried pork cubes. Stir and turn them in the caramel for 4–5 minutes until the outsides are lightly browned and every piece is coated.', checkpoint: 'The cubes have taken on a shiny tan color and a layer of rendered fat has pooled in the pan.', why: 'The melted sugar is doing two things at once — browning the meat and laying down the base of the glaze. That caramel is why hong shao rou tastes rounder than a plain soy braise.' },
+    { title: 'Deglaze with the wine', body: 'Turn the heat to low and pour in the 80 g Shaoxing wine. Scrape the bottom of the pan and let it bubble for 2 minutes.', checkpoint: 'The raw alcohol smell has blown off and what is left smells nutty and faintly sweet. Any stuck caramel has lifted off the pan.', why: 'Shaoxing is an aromatic, not a liquid. It scrubs the heavy, slightly barnyard smell off pork fat and leaves a malty background note behind — the thing that makes the finished dish smell like a restaurant rather than a pot of boiled pork.' },
+    { title: 'Add the soys and aromatics', body: 'Stir in the 54 g light soy sauce and the 28 g dark soy sauce, then add the ginger, scallion lengths, star anise, and the 720 g hot water. The liquid should just cover the pork.', checkpoint: 'The braising liquid is a clear reddish-brown, roughly the color of strong tea. If it looks black already, you have overdone the dark soy.' },
+    { title: 'Simmer', body: 'Bring to a full boil, then cover and drop to a bare simmer. Cook 60–75 minutes, stirring every 15 minutes or so and topping up with hot water if the level drops below the meat.', checkpoint: 'A cube gives with no resistance when pressed against the side of the pot, and the white fat layer has gone glassy and translucent rather than opaque.' },
+    { title: 'Reduce to a glaze', body: 'Fish out and discard the ginger, scallions, and star anise. Uncover, raise the heat to medium-high, and boil hard, stirring and turning the pork constantly, 8–12 minutes.', checkpoint: 'The liquid pulls back to a thick syrup barely covering the bottom of the pan and coats each cube in a glossy skin. A spatula dragged across the bottom leaves a lane that holds for a second before filling in.' },
+    { title: 'Serve', body: 'Take it off the heat the moment the sauce coats — a minute past that and the sugar tightens and turns sticky. Spoon the pork and every drop of glaze over hot rice and scatter the scallion greens on top.', checkpoint: 'The pork glistens and the glaze slides slowly off a spoon. There should be almost no loose liquid in the pan.' },
+  ],
+  notes: [
+    'Do not swap the two soy sauces for each other. Using dark soy where the light soy goes gives a dish that is nearly black, flatly sweet, and slightly bitter; using light soy for the whole amount gives a pale brown braise that is badly over-salted. The Woks of Life recommends Pearl River Bridge for both bottles.',
+    'No Shaoxing wine: dry sherry is the standard one-for-one substitute. Avoid anything labeled "cooking wine" with salt added — you cannot season around it, and it tastes flat.',
+    'Rock sugar is traditional and gives a cleaner shine, but granulated sugar works at the same weight. Rock sugar in large chunks should be crushed first so it melts evenly.',
+    'Make-ahead: this is better the next day. Cool, refrigerate up to 4 days, lift off the solid fat cap if you want, and reheat gently with a splash of water to loosen the glaze. It also freezes 3 months.',
+  ],
+});
