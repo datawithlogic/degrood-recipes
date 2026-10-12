@@ -34,7 +34,7 @@ RECIPES.push({
     { item: 'Garlic, minced', grams: '12 g', practical: '4 cloves' },
     { item: 'Fresh ginger, minced', grams: '8 g', practical: '1 tbsp' },
     { item: 'Scallions, cut into 1-inch lengths', grams: '30 g', practical: '3 scallions' },
-    { item: 'Steamed white rice, for serving', grams: '—', practical: 'to taste' },
+    { item: 'White rice, cooked in the rice cooker, for serving', grams: '—', practical: '2 rice cups' },
   ],
   steps: [
     { title: 'Velvet the beef', body: 'Toss the sliced flank steak with the baking soda first and let it sit 5 minutes. Add the cornstarch, soy sauce, Shaoxing wine, and sesame oil and massage until every slice is slick and there is no dry cornstarch left. Rest at room temperature 15–30 minutes while you prep everything else.', checkpoint: 'The beef should look glossy and slightly tacky, not watery in the bowl.', why: 'Velveting is a two-part job: the baking soda tenderizes, the cornstarch forms a starch jacket that seals in juice during the hard sear.' },

@@ -31,7 +31,7 @@ RECIPES.push({
     { section: 'To finish' },
     { item: 'Toasted sesame oil', grams: '5 g', practical: '1 tsp' },
     { item: 'Scallion greens, thinly sliced', grams: '10 g', practical: '1 scallion' },
-    { item: 'Steamed white rice, for serving', grams: '—', practical: 'to taste' },
+    { item: 'White rice, cooked in the rice cooker, for serving', grams: '—', practical: '2 rice cups' },
   ],
   steps: [
     { title: 'Dry and salt the thighs', body: 'Pat the thighs completely dry on both sides with paper towels and season them all over with the salt. Let them sit while you slice the ginger and scallions.', checkpoint: 'The skin feels papery and slightly tacky, not damp. Wet skin will not brown.' },

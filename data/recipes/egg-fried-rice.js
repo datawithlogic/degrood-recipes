@@ -13,7 +13,7 @@ RECIPES.push({
   skill: 'Easy',
   ingredients: [
     { section: 'Rice and eggs' },
-    { item: 'Cooked white rice, cold from the fridge', grams: '630 g', practical: '4 cups' },
+    { item: 'White rice, cooked in the rice cooker a day ahead and chilled', grams: '—', practical: '2 rice cups' },
     { item: 'Large eggs, beaten', grams: '—', practical: '4 eggs' },
     { section: 'Seasoning — mix this in one small bowl' },
     { item: 'Light soy sauce', grams: '18 g', practical: '1 tbsp' },
@@ -39,7 +39,7 @@ RECIPES.push({
   notes: [
     'No day-old rice? Spread freshly cooked rice on a sheet pan in a thin layer and leave it uncovered in the fridge for 45 minutes. Not as good, but workable.',
     'Dark soy sauce is sold as lǎo chōu (老抽) and light as shēng chōu (生抽); Pearl River Bridge and Lee Kum Kee are the standard jars in US Chinese groceries. If you only ever buy one dark soy, get the plain kind rather than the mushroom-flavored one. Want a deeper color? Go to 2 tsp, but taste first — past that it starts tasting sweet.',
-    'This is the base. Add 150 g of diced char siu, shrimp, or thawed frozen peas along with the scallion whites, and cut the rice back to 500 g so the pan does not crowd.',
+    'This is the base. Add 150 g of diced char siu, shrimp, or thawed frozen peas along with the scallion whites, and cut the rice back to 1½ rice cups so the pan does not crowd.',
     'Fried rice is better the day it is made but reheats fine in a hot dry skillet. Do not microwave it — the grains go back to being soft and sticky.',
   ],
 });

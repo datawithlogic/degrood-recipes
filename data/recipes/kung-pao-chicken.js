@@ -38,7 +38,7 @@ RECIPES.push({
     { item: 'Fresh ginger, thinly sliced', grams: '12 g', practical: '1½ tbsp' },
     { item: 'Scallions, white and light green parts in ¾-inch chunks', grams: '60 g', practical: '6 scallions' },
     { item: 'Roasted unsalted peanuts, skins rubbed off', grams: '100 g', practical: '¾ cup' },
-    { item: 'Steamed white rice, for serving', grams: '—', practical: 'to taste' },
+    { item: 'White rice, cooked in the rice cooker, for serving', grams: '—', practical: '2 rice cups' },
   ],
   steps: [
     { title: 'Prep everything before the burner goes on', body: 'Cube the chicken, slice the garlic and ginger, cut the scallions, halve the chilies, and line them up in bowls next to the stove along with the peanuts. Total cooking time is under six minutes and there is no pause in it anywhere.', checkpoint: 'Every component is within arm\'s reach of the pan and nothing is still on a cutting board.', why: 'Sichuan stir-frying is a sequence of 15–30 second moves. Chopping mid-cook is how garlic scorches and chicken overcooks.' },

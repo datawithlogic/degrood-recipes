@@ -28,7 +28,7 @@ RECIPES.push({
     { item: 'Star anise pods', grams: '—', practical: '2' },
     { note: 'Two soy sauces, two jobs. The light soy is the salt. The dark soy is the color — it is aged far longer and cut with molasses or caramel, so it paints the pork that deep red-brown and adds a faint bittersweet depth. It is not a saltier soy sauce and it is not a substitute for one.' },
     { section: 'To serve' },
-    { item: 'Steamed white rice', grams: '—', practical: 'to taste' },
+    { item: 'White rice, cooked in the rice cooker, for serving', grams: '—', practical: '2 rice cups' },
     { item: 'Scallion greens, thinly sliced', grams: '10 g', practical: '1 scallion' },
   ],
   steps: [

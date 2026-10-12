@@ -14,7 +14,7 @@ RECIPES.push({
   skill: 'Easy',
   ingredients: [
     { section: 'Base' },
-    { item: 'White rice, uncooked', grams: '~270 g', practical: '1⅓ cups' },
+    { item: 'White rice, uncooked', grams: '—', practical: '2 rice cups' },
     { item: 'Water', grams: '—', practical: 'per rice cooker line' },
     { item: 'Shredded rotisserie chicken', grams: '~340 g', practical: '~3 cups' },
     { item: 'Smoked ham, diced ¼"', grams: '~150 g', practical: '~1 cup' },

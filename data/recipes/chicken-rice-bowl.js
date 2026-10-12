@@ -24,6 +24,7 @@ RECIPES.push({
     { item: 'Water (for slurry)', grams: '30 g', practical: '2 tbsp' },
     { item: 'Gochugaru or chili flakes (optional)', grams: '2 g', practical: '½ tsp' },
     { item: 'Neutral oil (for pan)', grams: '14 g', practical: '1 tbsp' },
+    { item: 'White rice, cooked in the rice cooker, for serving', grams: '—', practical: '2 rice cups' },
   ],
   steps: [
     { title: 'Mix the sauce', body: 'Whisk soy sauce, honey, rice vinegar, sesame oil, garlic, ground ginger, and chili flakes (if using). Hold the cornstarch and water aside — those go in at the glaze step.' },

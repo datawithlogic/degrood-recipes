@@ -36,7 +36,7 @@ RECIPES.push({
     { item: 'Cold water', grams: '45 g', practical: '3 tbsp' },
     { item: 'Sichuan peppercorns, toasted and ground', grams: '4 g', practical: '2 tsp' },
     { item: 'Scallions, thinly sliced', grams: '30 g', practical: '3 scallions' },
-    { item: 'Steamed white rice, for serving', grams: '—', practical: 'to taste' },
+    { item: 'White rice, cooked in the rice cooker, for serving', grams: '—', practical: '2 rice cups' },
   ],
   steps: [
     { title: 'Prep first — this moves fast once it starts', body: 'Mince the garlic and ginger, chop the doubanjiang and black beans, slice the scallions, and mix the cornstarch into the cold water. Toast the Sichuan peppercorns in a dry pan over medium for about a minute until fragrant, then grind them. Line it all up by the stove.', checkpoint: 'The ground peppercorn smells piney and citrusy, not dusty. The slurry bowl sits where you can grab it one-handed.' },
