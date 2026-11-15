@@ -1,0 +1,51 @@
+// TacoTown Recipes — one recipe per file.
+// To add a recipe: copy any file in data/recipes/, name it <slug>.js,
+// edit the fields, then add the slug to data/manifest.js.
+// Never edit a recipe by rewriting a whole other file — one file, one recipe.
+
+RECIPES.push({
+  slug: 'garlic-noodles',
+  title: 'Garlic Noodles with Roasted Mushrooms',
+  category: 'Mains',
+  subcat: 'Pasta',
+  description: 'The Food Terminal roasted mushroom garlic noodle, built on San Francisco-style garlic noodles. A whole head of garlic is cooked gently in butter, oyster sauce and a little fish sauce go in, and the noodles get tossed with a bit of their starchy water until glossy. A pan of deeply browned roasted mushrooms goes on top.',
+  yield: 'Serves 4',
+  time: '~45 min',
+  skill: 'Easy',
+  ingredients: [
+    { section: 'Roasted mushrooms' },
+    { item: 'Mixed mushrooms (cremini, shiitake caps, oyster), cut or torn into large bite-size pieces', grams: '680 g', practical: '1½ lb' },
+    { item: 'Neutral oil (safflower)', grams: '40 g', practical: '3 tbsp' },
+    { item: 'Fine salt', grams: '3 g', practical: '½ tsp' },
+    { item: 'Black pepper', grams: '0.6 g', practical: '¼ tsp' },
+    { item: 'Light soy sauce (to finish)', grams: '6 g', practical: '1 tsp' },
+    { section: 'Garlic butter sauce' },
+    { item: 'Unsalted butter', grams: '85 g', practical: '6 tbsp' },
+    { item: 'Garlic, finely minced', grams: '50 g', practical: '1 head' },
+    { item: 'Oyster sauce', grams: '40 g', practical: '2 tbsp' },
+    { item: 'Fish sauce', grams: '12 g', practical: '2 tsp' },
+    { item: 'Light soy sauce', grams: '6 g', practical: '1 tsp' },
+    { item: 'Parmesan, finely grated on a microplane (optional)', grams: '30 g', practical: '½ cup' },
+    { note: 'About 16 cloves. That is not a typo. Garlic noodles are supposed to be loud with garlic, and cooking it gently in butter makes it sweet rather than harsh. Pre-minced jarred garlic is fine here if it is packed in water, not oil with citric acid, which tastes sour.' },
+    { section: 'Noodles' },
+    { item: 'Fresh lo mein egg noodles (or dried spaghetti)', grams: '450 g', practical: '1 lb' },
+    { item: 'Reserved noodle cooking water', grams: '120 g', practical: '½ cup' },
+    { item: 'Scallions, thinly sliced', grams: '20 g', practical: '2 scallions' },
+  ],
+  steps: [
+    { title: 'Roast the mushrooms', body: 'Heat the oven to 450°F. Toss the mushrooms with the oil, salt, and pepper on a rimmed sheet pan and spread them into a single layer with room between pieces. Roast 25 to 30 minutes, stirring once halfway, until well browned. Toss with the 6 g soy sauce as soon as they come out.', checkpoint: 'The mushrooms first release a puddle of liquid, then the pan goes dry and they shrink, brown, and crisp at the edges. Do not pull them while they are still wet and gray.', why: 'Mushrooms are mostly water. High heat and space let that water steam off fast so the surfaces can brown. Crowd them and they stew in their own juice and turn rubbery. The splash of soy at the end clings to the hot, dry surfaces and deepens the savory flavor.' },
+    { title: 'Start the noodle water', body: 'While the mushrooms roast, bring a large pot of lightly salted water to a boil. The sauce is salty, so go easy on the salt.', checkpoint: 'A rolling boil, ready by the time the garlic is done.' },
+    { title: 'Cook the garlic in butter', body: 'In a 12-inch skillet or wok over medium-low heat, melt the butter and add the garlic. Cook, stirring often, 3 to 5 minutes.', checkpoint: 'The garlic is soft, fragrant, and only the palest gold. The butter is foaming gently, not sizzling hard. If any garlic goes past light gold toward brown, pull the pan off the heat right away.', why: 'This is the one step that can ruin the dish. Browned garlic tastes bitter, and the bitterness carries through every bite. Low heat turns the raw bite of a lot of garlic into something mellow and sweet.' },
+    { title: 'Build the sauce', body: 'Take the pan off the heat and stir in the oyster sauce, fish sauce, and soy sauce. Set it aside while the noodles cook.', checkpoint: 'A loose, glossy, butterscotch-brown sauce flecked with garlic.' },
+    { title: 'Cook the noodles', body: 'Cook the noodles until just tender: 2 to 3 minutes for fresh egg noodles, or a minute shy of the package time for spaghetti. Scoop out a mug of the cooking water, then drain.', checkpoint: 'A strand has a little chew in the center.' },
+    { title: 'Toss', body: 'Return the skillet to low heat, add the drained noodles and 60 g of the noodle water, and toss hard with tongs. Add the parmesan, if using, and keep tossing, adding more of the water a splash at a time until the sauce coats every strand.', checkpoint: 'The noodles are glossy and slick, the garlic bits are spread throughout, and there is no greasy butter pooling in the pan.', why: 'The starchy water binds the butter and sauces into a creamy coating that clings, instead of a slick of melted butter in the bottom of the pan. Parmesan helps it emulsify and adds savory depth rather than a cheesy flavor.' },
+    { title: 'Serve', body: 'Divide the noodles among bowls, pile the roasted mushrooms on top, and scatter the scallions over.', checkpoint: 'Eat right away while the sauce is still glossy.' },
+  ],
+  notes: [
+    'Parmesan: most San Francisco-style garlic noodle recipes use it, and it adds savory depth more than cheesy flavor. Malaysian-Chinese versions like Food Terminal usually leave it out. Try it both ways.',
+    'Air fryer mushrooms instead of the oven: 400°F for 12 to 15 minutes, shaking the basket twice. Do them in two batches so the basket is not crowded.',
+    'Doubling: roast the mushrooms on two sheet pans. One crowded pan steams instead of browns.',
+    'Add-ins: sliced Char Siu, shrimp seared in the pan before the butter, or a fried egg all turn this into a bigger dinner.',
+    'No fish sauce: use another teaspoon of soy sauce. Fish sauce adds a deeper savory note but no fishy taste once cooked.',
+  ],
+});

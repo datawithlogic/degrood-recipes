@@ -104,4 +104,39 @@ const RECIPE_FILES = [
   'dumpling-dipping-sauce',
   'brown-sauce-chicken',
   'skirt-steak-tacos',
+
+  // Takeout favorites — fried chicken night
+  'crispy-chicken-sandwich',
+  'panko-chicken-tenders',
+  'air-fryer-fries',
+  'fried-pickles',
+  'mozzarella-sticks',
+  'garlic-parmesan-wings',
+  // Pizza night
+  'ny-style-pizza',
+  'white-pizza',
+  'cinnamon-knots',
+  // Mexican night
+  'queso',
+  'steak-burrito',
+  'korean-bbq-chicken-tacos',
+  // Chinese takeout night
+  'sesame-chicken',
+  'egg-drop-soup',
+  'crab-rangoon',
+  'mongolian-beef',
+  'egg-rolls',
+  // Noodle night
+  'char-siu',
+  'bbq-pork-noodles',
+  'garlic-noodles',
+  'salt-and-pepper-calamari',
+  // Burger night side
+  'crispy-brussels-sprouts',
+  // Breakfast & comfort
+  'waffles',
+  'hash-brown-scramble-bowl',
+  'texas-breakfast-melt',
+  'chicken-noodle-soup',
+  'southern-chicken-salad',
 ];

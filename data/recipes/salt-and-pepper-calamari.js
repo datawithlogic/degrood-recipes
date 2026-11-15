@@ -1,0 +1,53 @@
+// TacoTown Recipes — one recipe per file.
+// To add a recipe: copy any file in data/recipes/, name it <slug>.js,
+// edit the fields, then add the slug to data/manifest.js.
+// Never edit a recipe by rewriting a whole other file — one file, one recipe.
+
+RECIPES.push({
+  slug: 'salt-and-pepper-calamari',
+  title: 'Salt and Pepper Calamari',
+  category: 'Mains',
+  subcat: 'Seafood',
+  description: 'Cantonese salt-and-pepper squid: a light, crackly starch crust fried in under two minutes, then tossed in the wok with fried garlic, scallion, and a white-pepper salt. The fresh chili is optional and adjustable for the kid.',
+  yield: 'Serves 4 as a side',
+  time: '~40 min',
+  skill: 'Intermediate',
+  ingredients: [
+    { section: 'Squid' },
+    { item: 'Cleaned squid, tubes and tentacles (thawed if frozen)', grams: '680 g', practical: '1½ lb' },
+    { item: 'Shaoxing wine', grams: '15 g', practical: '1 tbsp' },
+    { item: 'Fine salt', grams: '1.5 g', practical: '¼ tsp' },
+    { section: 'Coating' },
+    { item: 'Cornstarch', grams: '96 g', practical: '¾ cup' },
+    { item: 'All-purpose flour', grams: '30 g', practical: '¼ cup' },
+    { item: 'Fine salt', grams: '1.5 g', practical: '¼ tsp' },
+    { note: 'Mostly starch for a thin, glassy crust that stays crisp, with a little flour so it browns to pale gold instead of staying chalky white.' },
+    { section: 'Frying' },
+    { item: 'Neutral oil (safflower), for frying', grams: '—', practical: 'to 2 inches deep' },
+    { section: 'Salt-and-pepper toss' },
+    { item: 'Fine salt', grams: '3 g', practical: '½ tsp' },
+    { item: 'Ground white pepper', grams: '1.2 g', practical: '½ tsp' },
+    { item: 'Sichuan peppercorns, toasted and ground (optional)', grams: '1 g', practical: '½ tsp' },
+    { item: 'Garlic, finely minced', grams: '18 g', practical: '6 cloves' },
+    { item: 'Scallions, thinly sliced, whites and greens separated', grams: '30 g', practical: '3 scallions' },
+    { item: 'Fresno or jalapeño chili, thinly sliced (optional)', grams: '15 g', practical: '2 tbsp sliced' },
+    { item: 'Lemon wedges, for serving', grams: '—', practical: '4 wedges' },
+  ],
+  steps: [
+    { title: 'Cut the squid', body: 'Slice the tubes into rings about ½ inch wide. Leave small tentacle clusters whole and halve large ones so all the pieces are about the same size.', checkpoint: 'Even rings and tentacle pieces. Similar sizes all finish in the same 90 seconds.' },
+    { title: 'Dry and season', body: 'Pat the squid very dry with paper towels, then toss with the Shaoxing wine and the 1.5 g salt from the squid section. Let it sit 10 to 15 minutes while the oil heats.', checkpoint: 'Lightly damp and shiny, not wet. No puddle in the bowl. Drain off any liquid before coating.', why: 'A little moisture helps the starch stick. Too much turns it into a gummy paste that falls off in the oil, and it makes the oil spit.' },
+    { title: 'Mix the seasoning', body: 'Stir together the 3 g salt, the white pepper, and the Sichuan pepper, if using, in a small dish. Keep it by the stove.', checkpoint: 'An even, speckled gray salt.', why: 'White pepper gives the floral heat Cantonese restaurants use. Sichuan pepper adds a citrusy tingle that adults may love and a kid may not, so it is optional.' },
+    { title: 'Heat the oil', body: 'In a heavy pot or wok, heat about 2 inches of oil to 375°F over medium-high heat. Set a wire rack over a sheet pan next to it.', checkpoint: 'An instant-read or clip-on thermometer reads 375°F, and a pinch of coating sizzles immediately.' },
+    { title: 'Coat', body: 'Whisk the cornstarch, flour, and the 1.5 g salt from the coating section in a wide bowl. Working in batches just before each one fries, toss a handful of squid in the coating, then shake it in a strainer to knock off the excess.', checkpoint: 'Every piece is evenly dusted in a thin white coat, with no clumps or bare wet spots.' },
+    { title: 'Fry fast', body: 'Fry one batch at a time for 90 seconds to 2 minutes, stirring once so the pieces separate. Lift out onto the rack and let the oil come back to 375°F before the next batch.', checkpoint: 'The crust is crisp and pale gold, and the bubbling in the oil has slowed. Do not wait for deep brown.', why: 'Squid has two good windows: under 2 minutes, or braised for 30 minutes and up. Anything in between is rubber. Small batches keep the oil hot so the crust sets fast while the inside stays tender.' },
+    { title: 'Fry the aromatics and toss', body: 'Pour off all but about 1 tablespoon of oil from the wok, or use a large skillet with a tablespoon of the frying oil. Over medium heat, cook the garlic, stirring, until light golden, about 1 minute. Add the scallion whites and the chili, if using, and stir 15 seconds. Turn off the heat, add the fried squid and the seasoning, and toss until the garlic and salt are spread all over.', checkpoint: 'Golden garlic bits and pepper cling all over the crust, and the kitchen smells of toasted garlic. The squid should still crackle.', why: 'The toss happens off the heat and fast. The goal is to coat the squid in fried garlic and salt, not to cook it again. More time in the pan softens the crust.' },
+    { title: 'Serve now', body: 'Pile onto a platter, scatter the scallion greens over, and serve with lemon wedges.', checkpoint: 'It is best in the first 10 minutes. Salt-and-pepper squid does not wait well.' },
+  ],
+  notes: [
+    'Buying squid: frozen cleaned tubes and tentacles from the seafood counter are what most restaurants use, and they work perfectly. Thaw overnight in the fridge, or in a sealed bag under cold running water for about 30 minutes.',
+    'Kid-friendly: leave the chili and Sichuan pepper out of the wok and serve them at the table instead, sliced chili, a little Sichuan salt, or chili crisp, so the adults can add more heat.',
+    'Potato starch instead of cornstarch, at the same weight, gives an even more glassy, shattering crust.',
+    'Same method, other proteins: shrimp (peeled, tail on) or firm tofu cubes. Shrimp take about 2 minutes; tofu needs 3 to 4 to crisp.',
+    'Oil: let it cool, strain it through a fine sieve, and keep it for another seafood fry. Do not reuse it for donuts.',
+  ],
+});

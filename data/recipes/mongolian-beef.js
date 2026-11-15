@@ -1,0 +1,53 @@
+// TacoTown Recipes — one recipe per file.
+// To add a recipe: copy any file in data/recipes/, name it <slug>.js,
+// edit the fields, then add the slug to data/manifest.js.
+// Never edit a recipe by rewriting a whole other file — one file, one recipe.
+
+RECIPES.push({
+  slug: 'mongolian-beef',
+  title: 'Mongolian Beef',
+  category: 'Mains',
+  subcat: 'Beef',
+  description: 'The P.F. Chang\'s-style version: thin flank steak dredged in cornstarch, shallow-fried until crisp at the edges, then tossed in a sticky, sweet soy-garlic-ginger glaze with a big handful of scallions.',
+  yield: 'Serves 4',
+  time: '~40 min',
+  skill: 'Easy',
+  ingredients: [
+    { section: 'Beef' },
+    { item: 'Flank steak, sliced ¼ inch thick against the grain', grams: '454 g', practical: '1 lb' },
+    { item: 'Baking soda', grams: '1 g', practical: '¼ tsp' },
+    { item: 'Light soy sauce', grams: '6 g', practical: '1 tsp' },
+    { item: 'Shaoxing wine (or dry sherry)', grams: '5 g', practical: '1 tsp' },
+    { item: 'Cornstarch, for dredging', grams: '40 g', practical: '5 tbsp' },
+    { item: 'Neutral oil (safflower), for shallow-frying', grams: '—', practical: '½ inch deep in pan' },
+    { section: 'Sauce' },
+    { item: 'Water', grams: '120 g', practical: '½ cup' },
+    { item: 'Light soy sauce', grams: '72 g', practical: '¼ cup' },
+    { item: 'Dark soy sauce', grams: '6 g', practical: '1 tsp' },
+    { item: 'Dark brown sugar, packed', grams: '73 g', practical: '⅓ cup' },
+    { item: 'Shaoxing wine (or dry sherry)', grams: '15 g', practical: '1 tbsp' },
+    { item: 'Cornstarch', grams: '4 g', practical: '1½ tsp' },
+    { note: 'Light soy is the salt and dark soy is the color — see the Egg Fried Rice recipe for why they are not interchangeable. The teaspoon of dark soy is what gives the sauce its deep mahogany takeout look.' },
+    { section: 'Aromatics and finish' },
+    { item: 'Garlic, minced', grams: '12 g', practical: '4 cloves' },
+    { item: 'Fresh ginger, minced', grams: '8 g', practical: '1 tbsp' },
+    { item: 'Scallions, cut into 2-inch lengths', grams: '60 g', practical: '6 scallions' },
+    { item: 'White rice, cooked in the rice cooker, for serving', grams: '—', practical: '2 rice cups' },
+  ],
+  steps: [
+    { title: 'Tenderize the beef', body: 'Start the rice cooker. Toss the sliced beef with the baking soda and let it sit 5 minutes, then add the 6 g light soy sauce and 5 g Shaoxing wine and toss again. Rest 15 minutes while you mix the sauce.', why: 'This is the same baking-soda trick as the Beef and Broccoli velvet — it raises the surface pH so the flank stays tender even after it is fried crisp.' },
+    { title: 'Mix the sauce', body: 'Whisk the 120 g water, 72 g light soy, 6 g dark soy, 73 g brown sugar, 15 g Shaoxing wine, and 4 g cornstarch until the sugar dissolves. Set it by the stove.', checkpoint: 'No cornstarch settled in the corners — re-whisk right before it goes in.' },
+    { title: 'Dredge', body: 'Pat the beef dry with paper towels. Toss it with the 40 g cornstarch until every slice is coated, then shake off the excess. Spread the slices out on a tray so they do not stick together.', checkpoint: 'Each slice has a thin, dry, matte coat with no wet patches and no thick clumps of starch.', why: 'Excess loose starch falls off into the oil and burns, and thick clumps fry up gummy. A thin dry coat is what fries up crisp.' },
+    { title: 'Shallow-fry in batches', body: 'Heat the oil in a wok or 12-inch skillet to 375°F (190°C); it should be about ½ inch deep. Fry the beef in 3 batches, laying the slices in one at a time without crowding, 1½–2 minutes per batch, turning once. Drain on a wire rack and let the oil recover between batches.', checkpoint: 'Edges deep brown and crisp, slices stiff when you lift them. A slice that bends limp needs another 30 seconds.' },
+    { title: 'Aromatics', body: 'Carefully pour off all but about 1 tablespoon of oil (let it cool before discarding). Over medium heat, add the garlic and ginger and stir 20–30 seconds.', checkpoint: 'Fragrant and just turning pale gold. Burnt garlic turns the whole glaze bitter.' },
+    { title: 'Reduce the glaze', body: 'Re-whisk the sauce and pour it in. Simmer, stirring, for 1½–2 minutes.', checkpoint: 'Bubbling in big, slow, glossy bubbles and thick enough to coat the back of a spoon like syrup.', why: 'The sugar needs to reduce to a sticky glaze before the beef goes back in. A thin sauce washes the crust off; a reduced one clings to it.' },
+    { title: 'Toss and serve', body: 'Add the beef and scallions and toss 30 seconds, just until everything is lacquered and the scallions turn bright green. Serve right away over rice.', checkpoint: 'Glaze clings to the beef with very little left in the pan.' },
+  ],
+  notes: [
+    'Flank is the classic, but skirt or sirloin also work. Slicing the steak is far easier if it spends 20 minutes in the freezer first.',
+    'P.F. Chang\'s style is sweet and not spicy. For heat, add 6–8 dried red chilies or ½ tsp red pepper flakes with the garlic, or serve chili crisp on the side for the grown-ups.',
+    'The frying oil can be strained through a fine sieve and reused once or twice for more frying.',
+    'Leftovers keep 3 days. Reheat in a hot skillet; the crust will soften but the flavor holds.',
+    'Takeout night: pair it with Egg Drop Soup and Egg Rolls, or with Egg Fried Rice instead of plain rice.',
+  ],
+});
