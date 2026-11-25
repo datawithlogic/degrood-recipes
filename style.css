@@ -654,6 +654,12 @@ h1, h2, h3, h4 { font-family: var(--font-serif); line-height: 1.25; color: var(-
   margin-bottom: 6px;
   color: var(--text);
 }
+.step-time {
+  font-weight: 500;
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+}
+.step-time::before { content: '⏱ '; }
 .step-body { font-size: 0.9rem; color: var(--text); line-height: 1.65; white-space: pre-line; }
 
 .checkpoint {

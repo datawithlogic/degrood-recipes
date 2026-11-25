@@ -232,7 +232,7 @@ function buildSteps(steps, mult) {
       <li class="step-item">
         <div class="step-num">${i + 1}</div>
         <div class="step-content">
-          ${step.title ? `<div class="step-title">${escHtml(step.title)}</div>` : ''}
+          ${step.title ? `<div class="step-title">${escHtml(step.title)}${step.time ? ` <span class="step-time">${escHtml(step.time)}</span>` : ''}</div>` : ''}
           <div class="step-body">${escHtml(scaleGramsInText(step.body, mult))}</div>
           ${checkpoint}
           ${why}

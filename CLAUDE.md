@@ -55,7 +55,8 @@ RECIPES.push({
     { note: 'Optional inline callout' },
   ],
   steps: [
-    { title: 'Step title', body: 'Instructions.',
+    { title: 'Step title', time: '~10 min',     // time optional; shown beside the title
+      body: 'Instructions.',
       checkpoint: 'Sensory cue that it worked',  // optional
       why: 'Why this matters' },                 // optional, use sparingly
   ],
