@@ -14,7 +14,7 @@ RECIPES.push({
   ingredients: [
     { item: 'Long-grain white rice', grams: '~400 g', practical: '2 cups' },
     { item: 'Neutral oil', grams: '28 g', practical: '2 tbsp' },
-    { item: 'Garlic cloves, minced', grams: '—', practical: '3 (or 1 tsp garlic powder)' },
+    { item: 'Garlic cloves, minced (or ⅓ tsp garlic powder per clove)', grams: '9 g', practical: '3 cloves' },
     { item: 'Small onion, finely diced', grams: '~100 g', practical: '1 small' },
     { item: 'Ground cumin', grams: '—', practical: '1 tsp' },
     { item: 'Chili powder (optional)', grams: '—', practical: '½ tsp' },

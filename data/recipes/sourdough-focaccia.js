@@ -14,7 +14,7 @@ RECIPES.push({
   skill: 'Easy',
   ingredients: [
     { item: 'Sourdough discard (cold OK — stir first)', grams: '200 g', practical: '~¾ cup' },
-    { item: 'Warm water (80–85°F)', grams: '265 g', practical: '~1 cup + 2 tbsp' },
+    { item: 'Warm water (80–85°F)', grams: '265 g', practical: '~1⅛ cups' },
     { item: 'Extra-virgin olive oil (dough)', grams: '25 g', practical: '2 tbsp' },
     { item: 'Bread flour or AP flour', grams: '400 g', practical: '~3⅓ cups' },
     { item: 'Fine sea salt', grams: '10 g', practical: '~1½ tsp' },

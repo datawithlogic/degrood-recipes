@@ -19,7 +19,7 @@ RECIPES.push({
     { item: 'Shredded rotisserie chicken', grams: '~340 g', practical: '~3 cups' },
     { item: 'Smoked ham, diced ¼"', grams: '~150 g', practical: '~1 cup' },
     { section: 'Sauce' },
-    { item: 'Condensed cream of chicken soup', grams: '~298 g', practical: '1 can (10.5 oz)' },
+    { item: 'Condensed cream of chicken soup (10.5-oz can)', grams: '~298 g', practical: '1 can' },
     { item: 'Whole milk', grams: '180 g', practical: '¾ cup' },
     { item: 'Dijon mustard (optional)', grams: '—', practical: '1 tsp' },
     { item: 'Garlic powder (optional)', grams: '—', practical: '½ tsp' },

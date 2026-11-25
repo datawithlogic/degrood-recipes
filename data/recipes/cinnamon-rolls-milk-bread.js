@@ -24,7 +24,7 @@ RECIPES.push({
     { item: 'Instant yeast', grams: '7 g', practical: '2¼ tsp' },
     { item: 'Fine salt', grams: '9 g', practical: '1½ tsp' },
     { item: 'Vanilla extract', grams: '5 g', practical: '1 tsp' },
-    { item: 'Unsalted butter, very soft', grams: '113 g', practical: '8 tbsp (1 stick)' },
+    { item: 'Unsalted butter, very soft', grams: '113 g', practical: '1 stick' },
     { section: 'Filling' },
     { item: 'Unsalted butter, very soft', grams: '115 g', practical: '½ cup' },
     { item: 'Dark brown sugar', grams: '200 g', practical: '1 cup packed' },

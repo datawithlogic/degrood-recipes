@@ -20,7 +20,7 @@ const RECIPE_FILES = [
   'banana-bread',
   'french-bread',
   'sourdough-starter',
-  'sourdough-bread-1lb',
+  'sourdough-boule',
   'sourdough-pullman-2lb',
   'sourdough-focaccia',
   'pretzel-bites',

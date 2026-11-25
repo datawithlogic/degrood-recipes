@@ -12,9 +12,9 @@ RECIPES.push({
   time: '15 min',
   skill: 'Easy',
   ingredients: [
-    { item: 'Unsalted butter', grams: '113 g', practical: '½ cup (1 stick)' },
+    { item: 'Unsalted butter', grams: '113 g', practical: '1 stick' },
     { item: 'Heavy whipping cream', grams: '355 g', practical: '1½ cups' },
-    { item: 'Garlic, minced', grams: '10 g', practical: '~2 cloves (2 tsp)' },
+    { item: 'Garlic, minced', grams: '10 g', practical: '~2 cloves' },
     { item: 'Italian seasoning (optional)', grams: '—', practical: '½ tsp' },
     { item: 'Black pepper', grams: '—', practical: '¼ tsp' },
     { item: 'Parmesan, freshly grated from a wedge', grams: '130 g', practical: '~1⅓ cups medium-grated' },

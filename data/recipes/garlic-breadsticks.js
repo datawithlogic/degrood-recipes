@@ -15,7 +15,7 @@ RECIPES.push({
   ingredients: [
     { section: 'Dough' },
     { item: 'Warm water (110°F / 43°C)', grams: '240 g', practical: '1 cup' },
-    { item: 'Active dry yeast', grams: '7 g', practical: '2¼ tsp (1 packet)' },
+    { item: 'Active dry yeast', grams: '7 g', practical: '2¼ tsp' },
     { item: 'Sugar', grams: '4 g', practical: '1 tsp' },
     { item: 'All-purpose flour', grams: '300 g', practical: '2½ cups' },
     { item: 'Fine salt', grams: '6 g', practical: '1 tsp' },
@@ -23,7 +23,7 @@ RECIPES.push({
     { section: 'Garlic Butter' },
     { item: 'Unsalted butter', grams: '57 g', practical: '4 tbsp' },
     { item: 'Garlic, minced', grams: '12 g', practical: '3–4 cloves' },
-    { item: 'Fresh parsley, chopped', grams: '4 g', practical: '1 tbsp (or ½ tsp dried)' },
+    { item: 'Fresh parsley, chopped (or dried, ⅓ the amount)', grams: '4 g', practical: '1 tbsp' },
     { item: 'Fine salt', grams: '—', practical: 'small pinch' },
     { item: 'Grated Parmesan (optional finish)', grams: '20 g', practical: '~3 tbsp' },
   ],

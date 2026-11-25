@@ -15,7 +15,7 @@ RECIPES.push({
     { item: 'All-purpose flour', grams: '270 g', practical: '2¼ cups' },
     { item: 'Baking soda', grams: '6 g', practical: '1 tsp' },
     { item: 'Fine salt', grams: '6 g', practical: '1 tsp' },
-    { item: 'Unsalted butter, softened', grams: '226 g', practical: '2 sticks (1 cup)' },
+    { item: 'Unsalted butter, softened', grams: '226 g', practical: '2 sticks' },
     { item: 'Granulated sugar', grams: '150 g', practical: '¾ cup' },
     { item: 'Brown sugar, packed', grams: '165 g', practical: '¾ cup packed' },
     { item: 'Eggs', grams: '—', practical: '2 large' },

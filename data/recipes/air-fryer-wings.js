@@ -13,12 +13,12 @@ RECIPES.push({
   time: '25 min (+optional 1–4 hr air-dry)',
   skill: 'Easy',
   ingredients: [
-    { item: 'Chicken wings, split (drums + flats)', grams: '900 g', practical: '~2 lb / ~20 pieces' },
+    { item: 'Chicken wings, split into drums and flats', grams: '900 g', practical: '~2 lb' },
     { item: 'Baking powder, aluminum-free', grams: '16 g', practical: '4 tsp' },
     { item: 'Fine salt', grams: '3–5 g', practical: '½–¾ tsp' },
     { item: 'Unsalted butter (finish)', grams: '30 g', practical: '2 tbsp' },
     { item: 'Lemon pepper seasoning (finish)', grams: '12–15 g', practical: '~2 tbsp' },
-    { note: 'Salt: if your lemon pepper blend contains salt, use only 3 g here. Baking powder: 8 g per 450 g (1 lb) of wings — don\'t eyeball past that, too much reads metallic. Aluminum-free only (Rumford, etc.).' },
+    { note: 'Salt: if your lemon pepper blend contains salt, use only 3 g here. Baking powder: about 2 tsp per pound of wings — don\'t eyeball past that, too much reads metallic. Aluminum-free only (Rumford, etc.).' },
   ],
   steps: [
     { title: 'Thaw and dry', body: 'Thaw fully if frozen. Pat very dry with paper towels — get into the folds between skin and meat.', why: 'Surface moisture is the single biggest enemy of crisp skin. Everything else is downstream of this step.' },

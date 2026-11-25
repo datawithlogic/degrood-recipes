@@ -79,7 +79,18 @@ const PLURALS = {
   cup:'cups', pound:'pounds', ounce:'ounces', quart:'quarts', pint:'pints',
   gallon:'gallons', tortilla:'tortillas', noodle:'noodles', breast:'breasts',
   thigh:'thighs', onion:'onions', carrot:'carrots', potato:'potatoes',
+  scallion:'scallions', shallot:'shallots', lemon:'lemons', lime:'limes',
+  rib:'ribs', yolk:'yolks', block:'blocks', tenderloin:'tenderloins',
+  scoop:'scoops', cap:'caps', coin:'coins', bun:'buns', chip:'chips',
+  jar:'jars', bag:'bags', box:'boxes', cutlet:'cutlets', fillet:'fillets',
+  chop:'chops', patty:'patties', wing:'wings', leaf:'leaves', roll:'rolls',
+  knot:'knots', wrapper:'wrappers', link:'links', chile:'chiles',
+  pepper:'peppers', tomato:'tomatoes', avocado:'avocados', pinch:'pinches',
+  dash:'dashes', handful:'handfuls',
 };
+
+/* Descriptor words that may sit between the quantity and its noun ("2 rice cups", "2 large eggs") */
+const NOUN_PREFIX = /^(\s+(?:(?:rice|large|small|medium|big|whole|heaping|level|scant)\s+)?)([a-z]+)/i;
 
 const SINGULARS = Object.fromEntries(Object.entries(PLURALS).map(([s, p]) => [p, s]));
 
@@ -157,7 +168,7 @@ function scalePractical(str, mult) {
   let rest = str.slice(m.index + m[0].length);
 
   /* Match the following count-noun to the new quantity */
-  rest = rest.replace(/^(\s+)([a-z]+)/i, (full, sp, word) => {
+  rest = rest.replace(NOUN_PREFIX, (full, sp, word) => {
     const key = word.toLowerCase();
     if (finalVal > 1  && PLURALS[key])   return sp + PLURALS[key];
     if (finalVal <= 1 && SINGULARS[key]) return sp + SINGULARS[key];
